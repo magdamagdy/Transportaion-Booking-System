@@ -1,13 +1,15 @@
 # Transportaion-Booking-System
 
 
-# Application Summary 
+## Application Summary 
 Javax and Aerospike Database to create a monolithic back-end application providing server side services for Transportaion-Booking-System.    
 
-  ## Attachment
+## Attachment
+attached postman collection for endpoints
   
-  attached postman collection for endpoints
-  
-  ## Database design
-  ### Relational Model
-  ![Relational Model](https://github.com/magdamagdy/TechBricks-Task/blob/main/Relational%20Model.png)
+## Database design
+### Relational Model
+![Relational Model](https://github.com/magdamagdy/Transportaion-Booking-System-/blob/main/DB%20Relational%20Model.png)
+
+### Entities and System logic 
+![Entities and System logic](https://github.com/magdamagdy/Transportaion-Booking-System-/blob/main/system%20logic.png)
