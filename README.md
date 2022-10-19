@@ -2,7 +2,7 @@
 
 
 ## Application Summary 
-Javax and Aerospike Database to create a monolithic back-end application providing server side services for Transportaion-Booking-System.    
+Implemented monolithic backend application providing services of SOAP & REST APIs for Transportaion-Booking-System using Javax and Aerospike Database.    
 
 
 ## Attachment
