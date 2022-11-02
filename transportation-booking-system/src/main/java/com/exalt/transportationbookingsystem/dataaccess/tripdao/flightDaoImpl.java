@@ -10,6 +10,9 @@ public class flightDaoImpl implements FlightDao {
   private final String seatNo ="seatNo";
   private final String flightClass ="flightClass";
 
+  /**
+   * The Aerospike Instance.
+   */
   database aerospike = database.getInstance();
 
   @Override

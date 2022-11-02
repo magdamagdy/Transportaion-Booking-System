@@ -3,37 +3,68 @@ package com.exalt.transportationbookingsystem.models.trip.dto;
 
 import com.exalt.transportationbookingsystem.models.vehicle.dto.TrainDTO;
 
+/**
+ * The type Train trip dto.
+ */
 public class TrainTripDTO extends TripDTO {
 
     private String trainClass;
 
     private Integer refTrainId;
 
-    // refTrain is used in get request to set the train entity
     private TrainDTO refTrain;
 
 
-    //setters & getters
+    /**
+     * Gets train class.
+     *
+     * @return the train class
+     */
     public String getTrainClass() {
         return trainClass;
     }
 
+    /**
+     * Sets train class.
+     *
+     * @param trainClass the train class
+     */
     public void setTrainClass(String trainClass) {
         this.trainClass = trainClass;
     }
 
+    /**
+     * Gets ref train id.
+     *
+     * @return the ref train id
+     */
     public Integer getRefTrainId() {
         return refTrainId;
     }
 
+    /**
+     * Sets ref train id.
+     *
+     * @param refTrainId the ref train id
+     */
     public void setRefTrainId(Integer refTrainId) {
         this.refTrainId = refTrainId;
     }
 
+    /**
+     * Gets ref train.
+     *
+     * @return the ref train
+     */
     public TrainDTO getRefTrain() {
         return refTrain;
     }
 
+    /**
+     * Sets ref train.
+     *
+     * @param refTrain the ref train
+     */
     public void setRefTrain(TrainDTO refTrain) {
         this.refTrain = refTrain;
     }

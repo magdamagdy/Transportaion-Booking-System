@@ -12,14 +12,26 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
+/**
+ * The type User controller.
+ */
 @Path("/user")
 public class userController {
     private final String nullWarningMsg = "Posted null value object or null id";
     private final String notFoundWarningMsg = "Object not found when searching by id";
     private final String internalServerErrorMsg = "Internal server error";
     private static final Logger LOGGER = LoggerFactory.getLogger(userController.class);
+    /**
+     * The User service.
+     */
     UserService userService = new userServiceImpl();
 
+    /**
+     * Create user response.
+     *
+     * @param user the user
+     * @return the response
+     */
     @POST
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -39,6 +51,12 @@ public class userController {
         }
     }
 
+    /**
+     * Update user response.
+     *
+     * @param user the user
+     * @return the response
+     */
     @PUT
     @Path("/update")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -63,7 +81,12 @@ public class userController {
     }
 
 
-    //Calling soap client at this method
+    /**
+     * Delete user response.
+     * Calling soap client at this method
+     * @param id the id
+     * @return the response
+     */
     @DELETE
     @Path("/delete/{id}")
     public Response deleteUser(@PathParam("id") int id){

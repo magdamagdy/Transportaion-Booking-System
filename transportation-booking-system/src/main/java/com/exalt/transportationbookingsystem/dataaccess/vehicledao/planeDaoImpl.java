@@ -14,6 +14,10 @@ public class planeDaoImpl implements PlaneDao {
   private final String noOfSeats ="noOfSeats";
   private final String airport = "airport";
   private final String airlines = "airlines";
+
+  /**
+   * The Aerospike Instance.
+   */
   database aerospike = database.getInstance();
 
   @Override

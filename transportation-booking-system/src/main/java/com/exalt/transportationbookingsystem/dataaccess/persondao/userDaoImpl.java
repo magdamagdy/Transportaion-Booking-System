@@ -11,6 +11,9 @@ public class userDaoImpl implements UserDao {
   private final String  phone = "phone";
   private final String email = "email";
 
+  /**
+   * The Aerospike Instance.
+   */
   database aerospike = database.getInstance();
 
   @Override

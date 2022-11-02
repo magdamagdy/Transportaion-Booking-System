@@ -3,64 +3,141 @@ package com.exalt.transportationbookingsystem.models.person.db;
 import com.aerospike.mapper.annotations.AerospikeKey;
 import com.aerospike.mapper.annotations.AerospikeRecord;
 
+/**
+ * The type Person db.
+ */
 @AerospikeRecord(namespace="test")
 public class PersonDB {
 
-    @AerospikeKey
+  /**
+   * The Id.
+   */
+  @AerospikeKey
     protected int id;
-    protected int age;
-    protected String gender;
-    protected String phone;
-    protected String email;
+  /**
+   * The Age.
+   */
+  protected int age;
+  /**
+   * The Gender.
+   */
+  protected String gender;
+  /**
+   * The Phone.
+   */
+  protected String phone;
+  /**
+   * The Email.
+   */
+  protected String email;
 
+  /**
+   * Instantiates a new Person db.
+   */
   public PersonDB() {
 
   }
 
-  //getters & setters
-
-    public int getId() {
+  /**
+   * Gets id.
+   *
+   * @return the id
+   */
+  public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   */
+  public void setId(int id) {
         this.id = id;
     }
 
-    public int getAge() {
+  /**
+   * Gets age.
+   *
+   * @return the age
+   */
+  public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+  /**
+   * Sets age.
+   *
+   * @param age the age
+   */
+  public void setAge(int age) {
         this.age = age;
     }
 
-    public String getGender() {
+  /**
+   * Gets gender.
+   *
+   * @return the gender
+   */
+  public String getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+  /**
+   * Sets gender.
+   *
+   * @param gender the gender
+   */
+  public void setGender(String gender) {
         this.gender = gender;
     }
 
-    public String getPhone() {
+  /**
+   * Gets phone.
+   *
+   * @return the phone
+   */
+  public String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+  /**
+   * Sets phone.
+   *
+   * @param phone the phone
+   */
+  public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public String getEmail() {
+  /**
+   * Gets email.
+   *
+   * @return the email
+   */
+  public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+  /**
+   * Sets email.
+   *
+   * @param email the email
+   */
+  public void setEmail(String email) {
         this.email = email;
     }
 
 
-    //constructor
+  /**
+   * Instantiates a new Person db.
+   *
+   * @param id     the id
+   * @param age    the age
+   * @param gender the gender
+   * @param phone  the phone
+   * @param email  the email
+   */
     public PersonDB(int id, int age, String gender, String phone, String email) {
         this.id = id;
         this.age = age;

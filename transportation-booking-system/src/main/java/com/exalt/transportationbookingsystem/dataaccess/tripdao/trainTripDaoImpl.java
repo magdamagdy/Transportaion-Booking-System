@@ -9,6 +9,10 @@ public class trainTripDaoImpl implements TrainTripDao{
   private final String date = "date";
   private final String seatNo ="seatNo";
   private final String trainClass ="trainClass";
+
+  /**
+   * The Aerospike Instance.
+   */
   database aerospike = database.getInstance();
 
   @Override

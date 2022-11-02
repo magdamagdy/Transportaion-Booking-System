@@ -14,6 +14,9 @@ public class trainDaoImpl implements TrainDao {
   private final String noOfSeats ="noOfSeats";
   private final String railwayStation = "railwayStation";
 
+  /**
+   * The Aerospike Instance.
+   */
   database aerospike = database.getInstance();
 
   @Override

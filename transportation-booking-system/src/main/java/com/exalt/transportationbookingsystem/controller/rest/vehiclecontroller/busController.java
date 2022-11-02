@@ -11,6 +11,9 @@ import jakarta.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The type Bus controller.
+ */
 @Path("/bus")
 public class busController {
 
@@ -18,8 +21,17 @@ public class busController {
     private final String notFoundWarningMsg = "Object not found when searching by id";
     private final String internalServerErrorMsg = "Internal server error";
     private static final Logger LOGGER = LoggerFactory.getLogger(busController.class);
+    /**
+     * The Bus service.
+     */
     BusService busService = new busServiceImpl();
 
+    /**
+     * Create bus response.
+     *
+     * @param bus the bus
+     * @return the response
+     */
     @POST
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -39,6 +51,12 @@ public class busController {
         }
     }
 
+    /**
+     * Update bus response.
+     *
+     * @param bus the bus
+     * @return the response
+     */
     @PUT
     @Path("/update")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -63,7 +81,12 @@ public class busController {
     }
 
 
-    //Calling soap client at this method
+    /**
+     * Delete bus response.
+     * Calling soap client at this method
+     * @param id the id
+     * @return the response
+     */
     @DELETE
     @Path("/delete/{id}")
     public Response deleteBus(@PathParam("id") int id){

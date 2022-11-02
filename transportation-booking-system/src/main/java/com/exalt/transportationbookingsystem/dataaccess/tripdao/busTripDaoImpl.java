@@ -9,6 +9,9 @@ public class busTripDaoImpl implements BusTripDao {
   private final String date = "date";
   private final String seatNo ="seatNo";
 
+  /**
+   * The Aerospike Instance.
+   */
   database aerospike = database.getInstance();
 
   @Override

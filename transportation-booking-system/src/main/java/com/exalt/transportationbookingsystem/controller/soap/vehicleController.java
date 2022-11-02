@@ -12,13 +12,25 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The type Vehicle controller.
+ */
 @WebService
 public class vehicleController {
 
   private final String notFoundWarningMsg = "Object not found when searching by id";
   private static final Logger LOGGER = LoggerFactory.getLogger(vehicleController.class);
+  /**
+   * The Vehicle service.
+   */
   VehicleSoapService vehicleService = new vehicleSoapServiceImpl();
 
+  /**
+   * Get bus by id object.
+   *
+   * @param id the id
+   * @return the object
+   */
   @WebMethod
   public Object getBusById(int id){
     try {
@@ -31,6 +43,12 @@ public class vehicleController {
     }
   }
 
+  /**
+   * Get train by id object.
+   *
+   * @param id the id
+   * @return the object
+   */
   @WebMethod
   public Object getTrainById(int id){
     try {
@@ -43,6 +61,12 @@ public class vehicleController {
     }
   }
 
+  /**
+   * Get plane by id object.
+   *
+   * @param id the id
+   * @return the object
+   */
   @WebMethod
   public Object getPlaneById(int id){
     try {
@@ -55,16 +79,31 @@ public class vehicleController {
     }
   }
 
+  /**
+   * Get all buses list.
+   *
+   * @return the list
+   */
   @WebMethod
   public List<BusDTO> getAllBuses(){
     return vehicleService.getAllBuses();
   }
 
+  /**
+   * Get all trains list.
+   *
+   * @return the list
+   */
   @WebMethod
   public List<TrainDTO> getAllTrains(){
     return vehicleService.getAllTrains();
   }
 
+  /**
+   * Get all planes list.
+   *
+   * @return the list
+   */
   @WebMethod
   public List<PlaneDTO> getAllPlanes(){
     return vehicleService.getAllPlanes();

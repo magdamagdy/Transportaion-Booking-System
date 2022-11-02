@@ -12,6 +12,10 @@ public class busDaoImpl implements BusDao {
   private final String model = "model";
   private final String colour = "colour";
   private final String noOfSeats ="noOfSeats";
+
+  /**
+   * The Aerospike Instance.
+   */
   database aerospike = database.getInstance();
 
   @Override

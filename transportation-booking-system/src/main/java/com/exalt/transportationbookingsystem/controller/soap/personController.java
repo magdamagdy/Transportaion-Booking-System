@@ -11,13 +11,25 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The type Person controller.
+ */
 @WebService
 public class personController {
 
   private final String notFoundWarningMsg = "Object not found when searching by id";
+  /**
+   * The Person service.
+   */
   PersonSoapService personService = new personSoapServiceImpl();
   private static final Logger LOGGER = LoggerFactory.getLogger(personController.class);
 
+  /**
+   * Gets user by id.
+   *
+   * @param id the id
+   * @return the user by id
+   */
   @WebMethod
   public Object getUserById(int id) {
    try {
@@ -30,6 +42,12 @@ public class personController {
    }
   }
 
+  /**
+   * Get driver by id object.
+   *
+   * @param id the id
+   * @return the object
+   */
   @WebMethod
   public Object getDriverById(int id){
     try {
@@ -42,11 +60,21 @@ public class personController {
     }
   }
 
+  /**
+   * Get all users list.
+   *
+   * @return the list
+   */
   @WebMethod
   public List<UserDTO> getAllUsers(){
     return personService.getAllUsers();
   }
 
+  /**
+   * Get all drivers list.
+   *
+   * @return the list
+   */
   @WebMethod
   public List<DriverDTO> getAllDrivers(){
     return personService.getAllDrivers();

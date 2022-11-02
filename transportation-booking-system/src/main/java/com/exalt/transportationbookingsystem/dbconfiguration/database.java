@@ -8,11 +8,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * The type Database.
+ */
 // Singleton design pattern for database
 public class database {
 
+    /**
+     * The constant mapper.
+     */
     public static AeroMapper mapper;
-    //private constructor provides the actual connection to database server
+
+    /**
+     * private constructor provides the actual connection to database server
+     */
     private database(){
         try (InputStream input = new FileInputStream("D:/Exalt/Training/Sample Project/transportation-booking-system/src/main/resources/config.properties")){
             Properties prop = new Properties();
@@ -29,13 +38,19 @@ public class database {
         }
     }
 
-    //inner class that provides thread safe
-    //Bill Pugh approach
+    /**
+     * inner class that provides thread safe
+     * Bill Pugh approach
+     */
     private static class databaseHolder {
         private static final database instanceHolder = new database();
     }
 
-    // The method that controls access to the singleton instance
+    /**
+     * Get instance database.
+     * The method that controls access to the singleton instance
+     * @return the database
+     */
     public static database getInstance(){
         return databaseHolder.instanceHolder;
     }

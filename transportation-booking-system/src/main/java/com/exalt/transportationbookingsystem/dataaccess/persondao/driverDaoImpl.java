@@ -13,6 +13,9 @@ public class driverDaoImpl implements DriverDao {
   private final String license = "license";
   private final String yearOfExp = "yearsOfExp";
 
+  /**
+   * The Aerospike Instance.
+   */
   database aerospike = database.getInstance();
 
   @Override

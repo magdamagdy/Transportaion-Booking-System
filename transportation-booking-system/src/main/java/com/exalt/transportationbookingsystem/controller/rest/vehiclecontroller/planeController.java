@@ -11,6 +11,9 @@ import jakarta.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The type Plane controller.
+ */
 @Path("/plane")
 public class planeController {
 
@@ -18,8 +21,17 @@ public class planeController {
     private final String notFoundWarningMsg = "Object not found when searching by id";
     private final String internalServerErrorMsg = "Internal server error";
     private static final Logger LOGGER = LoggerFactory.getLogger(planeController.class);
+    /**
+     * The Plane service.
+     */
     PlaneService planeService = new planeServiceImpl();
 
+    /**
+     * Add plane response.
+     *
+     * @param plane the plane
+     * @return the response
+     */
     @POST
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -40,6 +52,12 @@ public class planeController {
     }
 
 
+    /**
+     * Update plane response.
+     *
+     * @param plane the plane
+     * @return the response
+     */
     @PUT
     @Path("/update")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -63,7 +81,12 @@ public class planeController {
         }
     }
 
-    //Calling soap client at this method
+    /**
+     * Delete plane response.
+     * Calling soap client at this method
+     * @param id the id
+     * @return the response
+     */
     @DELETE
     @Path("/delete/{id}")
     public Response deletePlane(@PathParam("id") int id){

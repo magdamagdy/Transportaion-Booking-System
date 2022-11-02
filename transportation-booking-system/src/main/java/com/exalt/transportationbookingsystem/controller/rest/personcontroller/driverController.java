@@ -11,14 +11,26 @@ import jakarta.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The type Driver controller.
+ */
 @Path("/driver")
 public class driverController {
     private final String nullWarningMsg = "Posted null value object or null id";
     private final String notFoundWarningMsg = "Object not found when searching by id";
     private final String internalServerErrorMsg = "Internal server error";
     private static final Logger LOGGER = LoggerFactory.getLogger(driverController.class);
+    /**
+     * The Driver service.
+     */
     DriverService driverService = new driverServiceImpl();
 
+    /**
+     * Add driver response.
+     *
+     * @param driver the driver
+     * @return the response
+     */
     @POST
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -38,6 +50,12 @@ public class driverController {
         }
     }
 
+    /**
+     * Update driver response.
+     *
+     * @param driver the driver
+     * @return the response
+     */
     @PUT
     @Path("/update")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -62,7 +80,12 @@ public class driverController {
     }
 
 
-    //Calling soap client at this method
+    /**
+     * Delete driver response.
+     * Calling soap client at this method
+     * @param id the id
+     * @return the response
+     */
     @DELETE
     @Path("/delete/{id}")
     public Response deleteDriver(@PathParam("id") int id){

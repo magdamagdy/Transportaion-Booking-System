@@ -2,54 +2,109 @@ package com.exalt.transportationbookingsystem.models.person.db;
 
 import com.aerospike.mapper.annotations.AerospikeRecord;
 
+/**
+ * The type Driver db.
+ */
 @AerospikeRecord(namespace="test", set="driver")
 public class DriverDB extends PersonDB {
     private String license;
-    private int yearsOfExp; //experience
+    private int yearsOfExp;
     private Float rate;
     private int noOfRatings;
 
+  /**
+   * Instantiates a new Driver db.
+   */
   public DriverDB() {
     super();
   }
 
-  //getters& setters
-
-    public String getLicense() {
+  /**
+   * Gets license.
+   *
+   * @return the license
+   */
+  public String getLicense() {
         return license;
     }
 
-    public void setLicense(String license) {
+  /**
+   * Sets license.
+   *
+   * @param license the license
+   */
+  public void setLicense(String license) {
         this.license = license;
     }
 
-    public Float getRate() {
+  /**
+   * Gets rate.
+   *
+   * @return the rate
+   */
+  public Float getRate() {
         return rate;
     }
 
-    public void setRate(Float rate) {
+  /**
+   * Sets rate.
+   *
+   * @param rate the rate
+   */
+  public void setRate(Float rate) {
         this.rate = rate;
     }
 
-    public int getYearsOfExp() {
+  /**
+   * Gets years of experience.
+   *
+   * @return the years of exp
+   */
+  public int getYearsOfExp() {
         return yearsOfExp;
     }
 
-    public void setYearsOfExp(int yearsOfExp) {
+  /**
+   * Sets years of experience.
+   *
+   * @param yearsOfExp the years of exp
+   */
+  public void setYearsOfExp(int yearsOfExp) {
         this.yearsOfExp = yearsOfExp;
     }
 
-    public int getNoOfRatings() {
+  /**
+   * Gets no of ratings.
+   *
+   * @return the no of ratings
+   */
+  public int getNoOfRatings() {
         return noOfRatings;
     }
 
-    public void setNoOfRatings(int noOfRatings) {
+  /**
+   * Sets no of ratings.
+   *
+   * @param noOfRatings the no of ratings
+   */
+  public void setNoOfRatings(int noOfRatings) {
         this.noOfRatings = noOfRatings;
     }
 
-    //constructor
-
-    public DriverDB(int id, int age, String gender, String phone, String email, String license,
+  /**
+   * Instantiates a new Driver db.
+   *
+   * @param id          the id
+   * @param age         the age
+   * @param gender      the gender
+   * @param phone       the phone
+   * @param email       the email
+   * @param license     the license
+   * @param yearsOfExp  the years of experience
+   * @param rate        the rate
+   * @param noOfRatings the no of ratings
+   */
+  public DriverDB(int id, int age, String gender, String phone, String email, String license,
         int yearsOfExp, Float rate, int noOfRatings) {
         super(id, age, gender, phone, email);
         this.license = license;

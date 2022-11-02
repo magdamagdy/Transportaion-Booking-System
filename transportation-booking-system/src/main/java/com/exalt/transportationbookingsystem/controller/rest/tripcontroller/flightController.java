@@ -12,6 +12,9 @@ import jakarta.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The type Flight controller.
+ */
 @Path("/flight")
 public class flightController {
     private final String nullWarningMsg = "Posted null value object or null id";
@@ -21,8 +24,17 @@ public class flightController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(flightController.class);
 
+    /**
+     * The Flight service.
+     */
     FlightService flightService = new flightServiceImpl();
 
+    /**
+     * Add flight response.
+     *
+     * @param flight the flight
+     * @return the response
+     */
     @POST
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -45,6 +57,12 @@ public class flightController {
         }
     }
 
+    /**
+     * Update flight response.
+     *
+     * @param flight the flight
+     * @return the response
+     */
     @PUT
     @Path("/update")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -67,7 +85,13 @@ public class flightController {
     }
 
 
-    //Calling soap client at this method
+    /**
+     * Delete flight response.
+     * Calling soap client at this method
+     * @param id the id
+     * @return the response
+     */
+
     @DELETE
     @Path("/delete/{id}")
     public Response deleteFlight(@PathParam("id") int id){

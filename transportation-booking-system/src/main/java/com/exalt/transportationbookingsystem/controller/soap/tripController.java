@@ -8,14 +8,26 @@ import jakarta.jws.WebService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The type Trip controller.
+ */
 @WebService
 public class tripController {
 
   private final String notFoundWarningMsg = "Object not found when searching by id";
   private static final Logger LOGGER = LoggerFactory.getLogger(tripController.class);
 
+  /**
+   * The Trip service.
+   */
   TripSoapService tripService = new tripSoapServiceImpl();
 
+  /**
+   * Get bus trip by id object.
+   *
+   * @param id the id
+   * @return the object
+   */
   @WebMethod
   public Object getBusTripById(int id){
     try{
@@ -28,6 +40,12 @@ public class tripController {
     }
   }
 
+  /**
+   * Get train trip by id object.
+   *
+   * @param id the id
+   * @return the object
+   */
   @WebMethod
   public Object getTrainTripById(int id){
     try {
@@ -40,6 +58,12 @@ public class tripController {
     }
   }
 
+  /**
+   * Get flight by id object.
+   *
+   * @param id the id
+   * @return the object
+   */
   @WebMethod
   public Object getFlightById(int id){
     try{
@@ -52,6 +76,12 @@ public class tripController {
     }
   }
 
+  /**
+   * Get all trips by user id object.
+   * Takes user id and returns all trips booked by this user
+   * @param id the id
+   * @return the object
+   */
   @WebMethod
   public Object getAllTripsByUserId (int id){
     try {

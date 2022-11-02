@@ -12,6 +12,9 @@ import jakarta.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The type Bus trip controller.
+ */
 @Path("/busTrip")
 public class busTripController {
 
@@ -21,8 +24,17 @@ public class busTripController {
     private final String alreadyExistWarningMsg = "Trip already exist in user trip list";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(busTripController.class);
+    /**
+     * The Bus trip service.
+     */
     BusTripService busTripService = new busTripServiceImpl();
 
+    /**
+     * Create bus trip response.
+     *
+     * @param busTrip the bus trip
+     * @return the response
+     */
     @POST
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -46,6 +58,12 @@ public class busTripController {
     }
 
 
+    /**
+     * Update bus trip response.
+     *
+     * @param busTrip the bus trip
+     * @return the response
+     */
     @PUT
     @Path("/update")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -67,7 +85,12 @@ public class busTripController {
         }
     }
 
-    //Calling soap client at this method
+    /**
+     * Delete bus trip response.
+     * Calling soap client at this method
+     * @param id the id
+     * @return the response
+     */
     @DELETE
     @Path("/delete/{id}")
     public Response deleteBusTrip(@PathParam("id") int id){

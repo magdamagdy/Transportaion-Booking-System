@@ -12,6 +12,9 @@ import jakarta.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The type Train trip controller.
+ */
 @Path("/trainTrip")
 public class TrainTripController {
     private final String nullWarningMsg = "Posted null value object or null id";
@@ -20,8 +23,17 @@ public class TrainTripController {
     private final String alreadyExistWarningMsg = "Trip already exist in user trip list";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TrainTripController.class);
+    /**
+     * The Train trip service.
+     */
     TrainTripService trainTripService = new trainTripServiceImpl();
 
+    /**
+     * Create train trip response.
+     *
+     * @param trainTrip the train trip
+     * @return the response
+     */
     @POST
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -44,7 +56,12 @@ public class TrainTripController {
         }
     }
 
-
+    /**
+     * Update train trip response.
+     *
+     * @param trainTrip the train trip
+     * @return the response
+     */
     @PUT
     @Path("/update")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -66,7 +83,12 @@ public class TrainTripController {
         }
     }
 
-    //Calling soap client at this method
+    /**
+     * Delete train trip response.
+     * Calling soap client at this method
+     * @param id the id
+     * @return the response
+     */
     @DELETE
     @Path("/delete/{id}")
     public Response deleteTrainTrip(@PathParam("id") int id){

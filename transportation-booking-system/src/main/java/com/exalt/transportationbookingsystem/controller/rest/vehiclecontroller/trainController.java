@@ -11,14 +11,26 @@ import jakarta.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The type Train controller.
+ */
 @Path("/train")
 public class trainController {
     private final String nullWarningMsg = "Posted null value object or null id";
     private final String notFoundWarningMsg = "Object not found when searching by id";
     private final String internalServerErrorMsg = "Internal server error";
     private static final Logger LOGGER = LoggerFactory.getLogger(trainController.class);
+    /**
+     * The Train service.
+     */
     TrainService trainService = new trainServiceImpl();
 
+    /**
+     * Add train response.
+     *
+     * @param train the train
+     * @return the response
+     */
     @POST
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -40,6 +52,12 @@ public class trainController {
     }
 
 
+    /**
+     * Update train response.
+     *
+     * @param train the train
+     * @return the response
+     */
     @PUT
     @Path("/update")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -63,7 +81,12 @@ public class trainController {
         }
     }
 
-    //Calling soap client at this method
+    /**
+     * Delete train response.
+     * Calling soap client at this method
+     * @param id the id
+     * @return the response
+     */
     @DELETE
     @Path("/delete/{id}")
     public Response deleteTrain(@PathParam("id") int id){
