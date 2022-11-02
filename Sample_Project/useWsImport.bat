@@ -1,4 +1,0 @@
-@echo off
-"C:\Program Files\Java\jdk1.8.0_202\bin\wsimport" -d src\main\java\SoapClient -keep -p VehicleSoapClient "http://DESKTOP-VK3DF3H:8080/Sample_Project-1.0-SNAPSHOT/VehicleSoapClientServiceService?wsdl"
-"C:\Program Files\Java\jdk1.8.0_202\bin\wsimport" -d src\main\java\SoapClient -keep -p PersonSoapClient "http://DESKTOP-VK3DF3H:8080/Sample_Project-1.0-SNAPSHOT/PersonSoapClientServiceService?wsdl"
-"C:\Program Files\Java\jdk1.8.0_202\bin\wsimport" -d src\main\java\SoapClient -keep -p TripSoapClient "http://DESKTOP-VK3DF3H:8080/Sample_Project-1.0-SNAPSHOT/TripSoapClientServiceService?wsdl"
