@@ -1,0 +1,42 @@
+2022-10-29 14:52:34,587 DEBUG [http-listener-1(3)] c.e.t.c.r.p.driverController [driverController.java:29] null value logger
+2022-10-29 15:04:13,906 TRACE [http-listener-1(1)] c.e.t.c.r.p.driverController [driverController.java:29] null value logger
+2022-10-29 15:05:57,414 WARN [http-listener-1(2)] c.e.t.c.r.p.driverController [driverController.java:29] null value logger
+2022-10-29 20:44:48,990 WARN [http-listener-1(5)] c.e.t.c.r.p.driverController [driverController.java:31] Posted null value object or null id
+2022-10-29 20:49:36,384 WARN [http-listener-1(2)] c.e.t.c.r.p.driverController [driverController.java:31] Posted null value object or null id
+2022-10-29 20:49:54,297 WARN [http-listener-1(5)] c.e.t.c.r.p.userController [userController.java:32] Posted null value object or null id
+2022-10-29 20:50:19,048 WARN [http-listener-1(4)] c.e.t.c.r.p.userController [userController.java:32] Posted null value object or null id
+2022-10-29 20:50:50,173 WARN [http-listener-1(5)] c.e.t.c.r.v.busController [busController.java:33] Posted null value object or null id
+2022-10-29 20:53:27,845 WARN [http-listener-1(4)] c.e.t.c.r.t.busTripController [busTripController.java:39] Trip already exist in user trip list
+2022-10-29 20:54:43,999 WARN [http-listener-1(3)] c.e.t.c.r.t.TrainTripController [TrainTripController.java:37] Trip already exist in user trip list
+2022-10-29 20:54:52,269 WARN [http-listener-1(5)] c.e.t.c.r.t.flightController [flightController.java:38] Flight already exist in user flight list
+2022-10-29 20:55:06,165 WARN [http-listener-1(1)] c.e.t.c.r.p.driverController [driverController.java:50] Posted null value object or null id
+2022-10-30 15:52:28,794 WARN [http-listener-1(3)] c.e.t.c.soap.personController [personController.java:29] Object not found when searching by id
+2022-10-30 16:34:50,014 WARN [http-listener-1(3)] c.e.t.c.soap.personController [personController.java:40] Object not found when searching by id
+2022-10-30 16:37:46,062 WARN [http-listener-1(1)] c.e.t.controller.soap.tripController [tripController.java:31] Object not found when searching by id
+2022-10-30 16:37:54,450 WARN [http-listener-1(4)] c.e.t.controller.soap.tripController [tripController.java:67] Object not found when searching by id
+2022-10-30 16:59:01,772 WARN [http-listener-1(5)] c.e.t.c.soap.vehicleController [vehicleController.java:53] Object not found when searching by id
+2022-10-30 16:59:09,874 WARN [http-listener-1(4)] c.e.t.c.soap.vehicleController [vehicleController.java:29] Object not found when searching by id
+2022-10-30 16:59:14,707 WARN [http-listener-1(5)] c.e.t.c.soap.vehicleController [vehicleController.java:53] Object not found when searching by id
+2022-10-30 16:59:45,180 WARN [http-listener-1(1)] c.e.t.c.soap.vehicleController [vehicleController.java:41] Object not found when searching by id
+2022-10-30 16:59:55,685 WARN [http-listener-1(5)] c.e.t.c.soap.vehicleController [vehicleController.java:41] Object not found when searching by id
+2022-10-30 22:39:20,307 INFO [http-listener-1(5)] c.e.t.c.r.p.driverController [driverController.java:81] Internal server error
+2022-10-30 22:39:22,569 INFO [http-listener-1(3)] c.e.t.c.r.p.driverController [driverController.java:81] Internal server error
+2022-11-02 21:58:57,141 INFO [http-listener-1(5)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 21:58:59,523 INFO [http-listener-1(2)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:03:59,461 INFO [http-listener-1(1)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:04:03,901 INFO [http-listener-1(2)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:04:38,493 INFO [http-listener-1(1)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:04:39,868 INFO [http-listener-1(4)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:08:52,832 INFO [http-listener-1(3)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:08:57,155 INFO [http-listener-1(4)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:08:59,438 INFO [http-listener-1(5)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:11:06,955 INFO [http-listener-1(1)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:11:08,738 INFO [http-listener-1(2)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:11:09,860 INFO [http-listener-1(3)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:38:02,234 INFO [http-listener-1(2)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:38:04,311 INFO [http-listener-1(4)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:38:05,487 INFO [http-listener-1(1)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:38:06,468 INFO [http-listener-1(2)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:38:07,525 INFO [http-listener-1(3)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:38:13,682 INFO [http-listener-1(5)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
+2022-11-02 22:38:14,784 INFO [http-listener-1(4)] c.e.t.c.r.t.busTripController [busTripController.java:55] Internal server error
