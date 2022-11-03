@@ -8,9 +8,19 @@ import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.models.trip.dto.TrainTripDTO;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Train trip service impl test.
+ */
 class trainTripServiceImplTest {
 
+  /**
+   * The Train trip service.
+   */
   TrainTripService trainTripService = new trainTripServiceImpl();
+
+  /**
+   * Add train trip null value throws null value exception.
+   */
   @Test
   void addTrainTrip_NullValue_ThrowsNullValueException() {
     TrainTripDTO trainTrip = new TrainTripDTO();
@@ -20,6 +30,9 @@ class trainTripServiceImplTest {
         });
   }
 
+  /**
+   * Add train trip existing train trip throws already exist exception.
+   */
   @Test
   void addTrainTrip_ExistingTrainTrip_ThrowsAlreadyExistException() {
     TrainTripDTO trainTrip = new TrainTripDTO(1,"22-9-2022",60,"3:00","12:00","cairo","sharm el sheikh",1,"Class B",1);
@@ -29,6 +42,12 @@ class trainTripServiceImplTest {
         });
   }
 
+  /**
+   * Add train trip new train trip new record dto is consistent with returned record.
+   *
+   * @throws NullValueException    the null value exception
+   * @throws AlreadyExistException the already exist exception
+   */
   @Test
   void addTrainTrip_NewTrainTrip_NewRecordDtoIsConsistentWithReturnedRecord() throws NullValueException, AlreadyExistException {
     TrainTripDTO newRecord = new TrainTripDTO(2,"22-9-2022",60,"3:00","12:00","cairo","sharm el sheikh",1,"Class B",1);
@@ -46,6 +65,9 @@ class trainTripServiceImplTest {
     );
   }
 
+  /**
+   * Update train trip null value throws null value exception.
+   */
   @Test
   void updateTrainTrip_NullValue_ThrowsNullValueException() {
     TrainTripDTO trainTrip = new TrainTripDTO();
@@ -55,6 +77,9 @@ class trainTripServiceImplTest {
         });
   }
 
+  /**
+   * Update train trip not found id throws not found exception.
+   */
   @Test
   void updateTrainTrip_NotFoundId_ThrowsNotFoundException() {
     TrainTripDTO trainTrip = new TrainTripDTO(20,"22-9-2022",60,"3:00","5:00","cairo","sharm el sheikh",1,"Class B",1);
@@ -64,6 +89,12 @@ class trainTripServiceImplTest {
         });
   }
 
+  /**
+   * Update train trip existing train trip train trip data updated.
+   *
+   * @throws NullValueException the null value exception
+   * @throws NotFoundException  the not found exception
+   */
   @Test
   void updateTrainTrip_ExistingTrainTrip_TrainTripDataUpdated() throws NullValueException, NotFoundException {
     TrainTripDTO existingTrainTrip = new TrainTripDTO(2,"22-9-2022",60,"3:00","5:00","cairo","sharm el sheikh",1,"Class B",1);

@@ -20,13 +20,25 @@ import java.util.Arrays;
 import java.util.List;
 
 
+/**
+ * The type Train trip service.
+ */
 public class trainTripServiceImpl implements TrainTripService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "TrainTrip not found";
     private final String alreadyExistMsg = "TrainTrip already exist";
+    /**
+     * The Train trip dao.
+     */
     TrainTripDao trainTripDao = new trainTripDaoImpl();
+    /**
+     * The Train dao.
+     */
     TrainDao trainDao = new trainDaoImpl();
+    /**
+     * The User dao.
+     */
     UserDao userDao = new userDaoImpl();
     @Override
     public TrainTripDTO addTrainTrip(TrainTripDTO trainTrip)

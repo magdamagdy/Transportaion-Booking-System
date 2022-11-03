@@ -7,9 +7,19 @@ import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.models.vehicle.dto.BusDTO;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Bus service impl test.
+ */
 class busServiceImplTest {
 
+  /**
+   * The Bus service.
+   */
   BusService busService = new busServiceImpl();
+
+  /**
+   * Add bus null value throws null value exception.
+   */
   @Test
   void addBus_NullValue_ThrowsNullValueException() {
     BusDTO bus = new BusDTO();
@@ -19,6 +29,11 @@ class busServiceImplTest {
         });
   }
 
+  /**
+   * Add bus new bus new record dto is consistent with returned record.
+   *
+   * @throws NullValueException the null value exception
+   */
   @Test
   void addBus_NewBus_NewRecordDtoIsConsistentWithReturnedRecord() throws NullValueException {
     BusDTO newRecord = new BusDTO(3,"fsd566","china","c60","red",14,1);
@@ -33,6 +48,9 @@ class busServiceImplTest {
     );
   }
 
+  /**
+   * Update bus null value throws null value exception.
+   */
   @Test
   void updateBus_NullValue_ThrowsNullValueException() {
     BusDTO bus = new BusDTO();
@@ -42,6 +60,9 @@ class busServiceImplTest {
         });
   }
 
+  /**
+   * Update bus not found id throws not found exception.
+   */
   @Test
   void updateBus_NotFoundId_ThrowsNotFoundException() {
     BusDTO bus = new BusDTO(30,"fsd566","china","c60","red",14,1);
@@ -51,6 +72,12 @@ class busServiceImplTest {
         });
   }
 
+  /**
+   * Update bus existing bus bus data updated.
+   *
+   * @throws NullValueException the null value exception
+   * @throws NotFoundException  the not found exception
+   */
   @Test
   void updateBus_ExistingBus_BusDataUpdated() throws NullValueException, NotFoundException {
     BusDTO existingBus = new BusDTO(3,"fsd566","china","c60","red",14,1);

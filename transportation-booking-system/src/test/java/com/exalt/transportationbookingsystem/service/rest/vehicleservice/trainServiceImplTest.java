@@ -7,9 +7,19 @@ import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.models.vehicle.dto.TrainDTO;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Train service impl test.
+ */
 class trainServiceImplTest {
 
+  /**
+   * The Train service.
+   */
   TrainService trainService = new trainServiceImpl();
+
+  /**
+   * Add train null value throws null value exception.
+   */
   @Test
   void addTrain_NullValue_ThrowsNullValueException() {
     TrainDTO train = new TrainDTO();
@@ -18,6 +28,12 @@ class trainServiceImplTest {
           trainService.addTrain(train);
         });
   }
+
+  /**
+   * Add train new train new record dto is consistent with returned record.
+   *
+   * @throws NullValueException the null value exception
+   */
   @Test
   void addTrain_NewTrain_NewRecordDtoIsConsistentWithReturnedRecord() throws NullValueException {
     TrainDTO newRecord = new TrainDTO(3,"fsd566","france","fff03","white",40,1,"cairo railways");
@@ -33,6 +49,9 @@ class trainServiceImplTest {
     );
   }
 
+  /**
+   * Update train null value throws null value exception.
+   */
   @Test
   void updateTrain_NullValue_ThrowsNullValueException() {
     TrainDTO train = new TrainDTO();
@@ -42,6 +61,9 @@ class trainServiceImplTest {
         });
   }
 
+  /**
+   * Update train not found id throws not found exception.
+   */
   @Test
   void updateTrain_NotFoundId_ThrowsNotFoundException() {
     TrainDTO train = new TrainDTO(30,"fsd566","france","fff03","white",40,1,"cairo railways");
@@ -50,6 +72,13 @@ class trainServiceImplTest {
           trainService.updateTrain(train);
         });
   }
+
+  /**
+   * Update train existing train train data updated.
+   *
+   * @throws NullValueException the null value exception
+   * @throws NotFoundException  the not found exception
+   */
   @Test
   void updateTrain_ExistingTrain_TrainDataUpdated() throws NullValueException, NotFoundException {
     TrainDTO existingTrain = new TrainDTO(3,"fsd566","france","fff03","white",40,1,"cairo railways");

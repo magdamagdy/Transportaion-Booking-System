@@ -11,11 +11,20 @@ import com.exalt.transportationbookingsystem.models.vehicle.dto.PlaneDTO;
 import com.exalt.transportationbookingsystem.models.vehicle.mapperinterfaces.PlaneMapper;
 import com.exalt.transportationbookingsystem.models.person.db.DriverDB;
 
+/**
+ * The type Plane service.
+ */
 public class planeServiceImpl implements PlaneService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "Plane not found";
+    /**
+     * The Plane dao.
+     */
     PlaneDao planeDao = new planeDaoImpl();
+    /**
+     * The Driver dao.
+     */
     DriverDao driverDao = new driverDaoImpl();
     @Override
     public PlaneDTO addPlane(PlaneDTO plane) throws NullValueException {

@@ -18,13 +18,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The type Bus trip service.
+ */
 public class busTripServiceImpl implements BusTripService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "BusTrip not found";
     private final String alreadyExistMsg = "BusTrip already exist";
+    /**
+     * The Bus trip dao.
+     */
     BusTripDao busTripDao = new busTripDaoImpl();
+    /**
+     * The Bus dao.
+     */
     BusDao busDao = new busDaoImpl();
+    /**
+     * The User dao.
+     */
     UserDao userDao = new userDaoImpl();
     @Override
     public BusTripDTO addBusTrip(BusTripDTO busTrip)

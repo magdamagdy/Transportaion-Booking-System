@@ -24,19 +24,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * The type Vehicle soap client.
+ */
 @WebService
 public class vehicleSoapClient {
 
     private final String notFoundMsg = "Object not found to delete it";
     private final String restrictDeleteMsg = "Restrict delete for this object";
 
+    /**
+     * The Bus dao.
+     */
     BusDao busDao = new busDaoImpl();
+    /**
+     * The Train dao.
+     */
     TrainDao trainDao = new trainDaoImpl();
+    /**
+     * The Plane dao.
+     */
     PlaneDao planeDao = new planeDaoImpl();
+    /**
+     * The Bus trip dao.
+     */
     BusTripDao busTripDao = new busTripDaoImpl();
+    /**
+     * The Train trip dao.
+     */
     TrainTripDao trainTripDao = new trainTripDaoImpl();
+    /**
+     * The Flight dao.
+     */
     FlightDao flightDao = new flightDaoImpl();
 
+    /**
+     * Delete bus by id.
+     *
+     * @param id the id
+     * @throws RestrictDeleteException the restrict delete exception
+     * @throws NotFoundException       the not found exception
+     */
     @WebMethod
     public void deleteBusById(int id) throws RestrictDeleteException, NotFoundException {
         if (busDao.readBusById(id) == null){
@@ -52,6 +80,13 @@ public class vehicleSoapClient {
         busDao.deleteBusById(id);
     }
 
+    /**
+     * Delete train by id.
+     *
+     * @param id the id
+     * @throws NotFoundException       the not found exception
+     * @throws RestrictDeleteException the restrict delete exception
+     */
     @WebMethod
     public void deleteTrainById(int id) throws NotFoundException, RestrictDeleteException {
         if (trainDao.readTrainById(id) == null){
@@ -67,6 +102,13 @@ public class vehicleSoapClient {
         trainDao.deleteTrainById(id);
     }
 
+    /**
+     * Delete plane by id.
+     *
+     * @param id the id
+     * @throws NotFoundException       the not found exception
+     * @throws RestrictDeleteException the restrict delete exception
+     */
     @WebMethod
     public void deletePlaneById(int id) throws NotFoundException, RestrictDeleteException {
         if (planeDao.readPlaneById(id) == null) {

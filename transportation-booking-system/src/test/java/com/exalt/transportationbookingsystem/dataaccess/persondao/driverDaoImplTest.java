@@ -9,9 +9,19 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 
+/**
+ * The type Driver dao impl test.
+ */
 class driverDaoImplTest {
+
+  /**
+   * The Driver dao.
+   */
   DriverDao driverDao = new driverDaoImpl();
 
+  /**
+   * Save and read driver by id new driver new saved record is consistent with retrieved record.
+   */
   @Test
   void saveAndReadDriverById_NewDriver_NewSavedRecordIsConsistentWithRetrievedRecord(){
     DriverDB newRecord =  new DriverDB(4,47,"male","01296371842","testDriver@gmail.com",
@@ -31,6 +41,9 @@ class driverDaoImplTest {
     driverDao.deleteDriverById(newRecord.getId());
   }
 
+  /**
+   * Update driver existing driver retrieved record is updated.
+   */
   @Test
   void updateDriver_ExistingDriver_RetrievedRecordIsUpdated() {
     driverDao.saveDriver(new DriverDB(5,41,"female","01519840002","test1Driver@gmail.com",
@@ -50,12 +63,18 @@ class driverDaoImplTest {
     driverDao.deleteDriverById(ExistingDriver.getId());
   }
 
+  /**
+   * Read all drivers existing no of records list of records not null.
+   */
   @Test
   void readAllDrivers_ExistingNoOfRecords_ListOfRecordsNotNull() {
     List<DriverDB> allRecords = new ArrayList<>(driverDao.readAllDrivers());
     assertTrue(allRecords.size() > 0);
   }
 
+  /**
+   * Delete driver by id existing driver getting null object after delete.
+   */
   @Test
   void deleteDriverById_ExistingDriver_GettingNullObjectAfterDelete() {
     driverDao.saveDriver(new DriverDB(6,40,"male","01096300002","test3Driver@gmail.com",

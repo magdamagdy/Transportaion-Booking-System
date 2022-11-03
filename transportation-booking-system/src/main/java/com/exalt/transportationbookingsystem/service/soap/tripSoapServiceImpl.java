@@ -31,6 +31,9 @@ import com.exalt.transportationbookingsystem.models.person.dto.UserTripListsDTO;
 import com.exalt.transportationbookingsystem.models.person.mapperinterfaces.DriverMapper;
 import com.exalt.transportationbookingsystem.models.person.mapperinterfaces.UserMapper;
 
+/**
+ * The type Trip soap service.
+ */
 public class tripSoapServiceImpl implements TripSoapService{
 
 
@@ -38,9 +41,21 @@ public class tripSoapServiceImpl implements TripSoapService{
     private final String trainTripNotFoundMsg = "trainTrip not found";
     private final String flightNotFoundMsg = "flight not found";
     private final String userNotFoundMsg = "user not found";
+    /**
+     * The Bus trip dao.
+     */
     BusTripDao busTripDao = new busTripDaoImpl();
+    /**
+     * The Train trip dao.
+     */
     TrainTripDao trainTripDao = new trainTripDaoImpl();
+    /**
+     * The Flight dao.
+     */
     FlightDao flightDao = new flightDaoImpl();
+    /**
+     * The User dao.
+     */
     UserDao userDao = new userDaoImpl();
     @Override
     public BusTripDTO getBusTripById(int id) throws NotFoundException {

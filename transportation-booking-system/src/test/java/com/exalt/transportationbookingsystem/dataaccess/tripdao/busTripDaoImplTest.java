@@ -10,12 +10,32 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Bus trip dao impl test.
+ */
 class busTripDaoImplTest {
 
+  /**
+   * The Bus trip dao.
+   */
   BusTripDao busTripDao = new busTripDaoImpl();
+  /**
+   * The Driver.
+   */
   DriverDB driver = new DriverDB(6,45,"male","012589367410","driver@gmail.com","dfb710",6,3.1F,7);
+  /**
+   * The Bus.
+   */
   BusDB bus = new BusDB(3,"hop417","Germany","c80","blue",32,driver);
+  /**
+   * The User.
+   */
   UserDB user = new UserDB(7,19,"female","01223699874","user@gmail.com");
+
+  /**
+   * Save and read bus trip by id new bus trip new saved record is consistent with retrieved
+   * record.
+   */
   @Test
   void saveAndReadBusTripById_NewBusTrip_NewSavedRecordIsConsistentWithRetrievedRecord(){
     BusTripDB newRecord =  new BusTripDB(2,"22-9-2010",5,"9:00","11:30","Cairo","Alex",user,bus);
@@ -34,6 +54,9 @@ class busTripDaoImplTest {
     busTripDao.deleteBusTripById(newRecord.getId());
   }
 
+  /**
+   * Update bus trip existing bus trip retrieved record is updated.
+   */
   @Test
   void updateBusTrip_ExistingBusTrip_RetrievedRecordIsUpdated() {
     busTripDao.saveBusTrip(
@@ -55,12 +78,18 @@ class busTripDaoImplTest {
     busTripDao.deleteBusTripById(ExistingBusTrip.getId());
   }
 
+  /**
+   * Read all bus trips existing no of records list of records not null.
+   */
   @Test
   void readAllBusTrips_ExistingNoOfRecords_ListOfRecordsNotNull() {
     List<BusTripDB> allRecords = new ArrayList<>(busTripDao.readAllBusTrips());
     assertTrue(allRecords.size() > 0);
   }
 
+  /**
+   * Delete bus trip by id existing bus trip getting null object after delete.
+   */
   @Test
   void deleteBusTripById_ExistingBusTrip_GettingNullObjectAfterDelete() {
     busTripDao.saveBusTrip(new BusTripDB(4, "30-9-2010", 20, "9:00", "11:30", "Cairo", "Alex", user, bus));

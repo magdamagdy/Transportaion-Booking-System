@@ -7,9 +7,19 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type User dao impl test.
+ */
 class userDaoImplTest {
+
+  /**
+   * The User dao.
+   */
   UserDao userDao = new userDaoImpl();
 
+  /**
+   * Save and read user by id new user new saved record is consistent with retrieved record.
+   */
   @Test
   void saveAndReadUserById_NewUser_NewSavedRecordIsConsistentWithRetrievedRecord(){
     UserDB newRecord =  new UserDB(4,47,"male","01000371842","testUser@gmail.com");
@@ -24,6 +34,9 @@ class userDaoImplTest {
     userDao.deleteUserById(newRecord.getId());
   }
 
+  /**
+   * Update user existing user retrieved record is updated.
+   */
   @Test
   void updateUser_ExistingUser_RetrievedRecordIsUpdated() {
     userDao.saveUser(new UserDB(5,36,"female","01519940002","test1User@gmail.com"));
@@ -40,12 +53,18 @@ class userDaoImplTest {
   }
 
 
+  /**
+   * Read all users existing no of records list of records not null.
+   */
   @Test
   void readAllUsers_ExistingNoOfRecords_ListOfRecordsNotNull() {
     List<UserDB> allRecords = new ArrayList<>(userDao.readAllUsers());
     assertTrue(allRecords.size() > 0);
   }
 
+  /**
+   * Delete user by id existing user getting null object after delete.
+   */
   @Test
   void deleteUserById_ExistingUser_GettingNullObjectAfterDelete() {
     userDao.saveUser(new UserDB(6, 40, "male", "01016300002", "test3User@gmail.com"));

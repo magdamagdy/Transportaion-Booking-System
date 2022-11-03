@@ -8,9 +8,19 @@ import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.models.trip.dto.BusTripDTO;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Bus trip service impl test.
+ */
 class busTripServiceImplTest {
 
+  /**
+   * The Bus trip service.
+   */
   BusTripService busTripService = new busTripServiceImpl();
+
+  /**
+   * Add bus trip null value throws null value exception.
+   */
   @Test
   void addBusTrip_NullValue_ThrowsNullValueException() {
     BusTripDTO busTrip = new BusTripDTO();
@@ -20,6 +30,9 @@ class busTripServiceImplTest {
         });
   }
 
+  /**
+   * Add bus trip existing trip throws already exist exception.
+   */
   @Test
   void addBusTrip_ExistingTrip_ThrowsAlreadyExistException() {
     BusTripDTO busTrip = new BusTripDTO(1,"22-6-2021",5,"3:30","5:00","cairo","Alex",1,1);
@@ -29,6 +42,12 @@ class busTripServiceImplTest {
         });
   }
 
+  /**
+   * Add bus trip new bus trip new record dto is consistent with returned record.
+   *
+   * @throws NullValueException    the null value exception
+   * @throws AlreadyExistException the already exist exception
+   */
   @Test
   void addBusTrip_NewBusTrip_NewRecordDtoIsConsistentWithReturnedRecord() throws NullValueException, AlreadyExistException {
     BusTripDTO newRecord = new BusTripDTO(2, "5-12-2022", 5, "2:30", "5:00", "cairo", "Alex", 1, 1);
@@ -45,6 +64,9 @@ class busTripServiceImplTest {
     );
   }
 
+  /**
+   * Update bus trip null value throws null value exception.
+   */
   @Test
   void updateBusTrip_NullValue_ThrowsNullValueException() {
     BusTripDTO busTrip = new BusTripDTO();
@@ -54,6 +76,9 @@ class busTripServiceImplTest {
         });
   }
 
+  /**
+   * Update bus trip not found id throws not found exception.
+   */
   @Test
   void updateBusTrip_NotFoundId_ThrowsNotFoundException() {
     BusTripDTO busTrip = new BusTripDTO(20, "5-12-2022", 5, "2:30", "5:00", "cairo", "Alex", 1, 1);
@@ -63,6 +88,12 @@ class busTripServiceImplTest {
         });
   }
 
+  /**
+   * Update bus trip existing bus trip bus trip data updated.
+   *
+   * @throws NullValueException the null value exception
+   * @throws NotFoundException  the not found exception
+   */
   @Test
   void updateBusTrip_ExistingBusTrip_BusTripDataUpdated() throws NullValueException, NotFoundException {
     BusTripDTO existingBusTrip = new BusTripDTO(2, "5-12-2022", 5, "2:30", "5:00", "cairo", "Alex", 1, 1);

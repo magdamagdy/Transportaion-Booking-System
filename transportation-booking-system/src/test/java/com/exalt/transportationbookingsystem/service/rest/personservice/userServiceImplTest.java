@@ -7,9 +7,19 @@ import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.models.person.dto.UserDTO;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type User service impl test.
+ */
 class userServiceImplTest {
 
+  /**
+   * The User service.
+   */
   UserService userService = new userServiceImpl();
+
+  /**
+   * Add user null value throws null value exception.
+   */
   @Test
   void addUser_NullValue_ThrowsNullValueException() {
     UserDTO user = new UserDTO();
@@ -19,6 +29,11 @@ class userServiceImplTest {
         });
   }
 
+  /**
+   * Add user new user new record dto is consistent with returned record.
+   *
+   * @throws NullValueException the null value exception
+   */
   @Test
   void addUser_NewUser_NewRecordDtoIsConsistentWithReturnedRecord() throws NullValueException {
     UserDTO newRecord = new UserDTO(4,40,"male","01299663300","user@gmail.com");
@@ -31,6 +46,9 @@ class userServiceImplTest {
     );
   }
 
+  /**
+   * Update user null value throws null value exception.
+   */
   @Test
   void updateUser_NullValue_ThrowsNullValueException() {
     UserDTO user = new UserDTO();
@@ -40,6 +58,9 @@ class userServiceImplTest {
         });
   }
 
+  /**
+   * Update user not found id throws not found exception.
+   */
   @Test
   void updateUser_NotFoundId_ThrowsNotFoundException() {
     UserDTO user = new UserDTO(20,40,"male","01299663300","user@gmail.com");
@@ -49,6 +70,12 @@ class userServiceImplTest {
         });
   }
 
+  /**
+   * Update user existing user user data updated.
+   *
+   * @throws NullValueException the null value exception
+   * @throws NotFoundException  the not found exception
+   */
   @Test
   void updateUser_ExistingUser_UserDataUpdated() throws NullValueException, NotFoundException {
     UserDTO existingUser = new UserDTO(4,50,"male","01248936711","uaserdto@gmail.com");

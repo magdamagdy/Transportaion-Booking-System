@@ -11,9 +11,19 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Vehicle soap service impl test.
+ */
 class vehicleSoapServiceImplTest {
 
+  /**
+   * The Vehicle soap service.
+   */
   VehicleSoapService vehicleSoapService = new vehicleSoapServiceImpl();
+
+  /**
+   * Gets bus by id not found id throws not found exception.
+   */
   @Test
   void getBusById_NotFoundId_ThrowsNotFoundException() {
     assertThrows(NotFoundException.class,
@@ -22,6 +32,9 @@ class vehicleSoapServiceImplTest {
         });
   }
 
+  /**
+   * Gets train by id not found id throws not found exception.
+   */
   @Test
   void getTrainById_NotFoundId_ThrowsNotFoundException() {
     assertThrows(NotFoundException.class,
@@ -30,6 +43,9 @@ class vehicleSoapServiceImplTest {
         });
   }
 
+  /**
+   * Gets plane by id not found id throws not found exception.
+   */
   @Test
   void getPlaneById_NotFoundId_ThrowsNotFoundException() {
     assertThrows(NotFoundException.class,
@@ -38,18 +54,27 @@ class vehicleSoapServiceImplTest {
         });
   }
 
+  /**
+   * Gets all buses existing no of records list of records not null.
+   */
   @Test
   void getAllBuses_ExistingNoOfRecords_ListOfRecordsNotNull() {
     List<BusDTO> AllBuses = new ArrayList<>(vehicleSoapService.getAllBuses());
     assertTrue(AllBuses.size() > 0);
   }
 
+  /**
+   * Gets all trains existing no of records list of records not null.
+   */
   @Test
   void getAllTrains_ExistingNoOfRecords_ListOfRecordsNotNull() {
     List<TrainDTO> AllTrains = new ArrayList<>(vehicleSoapService.getAllTrains());
     assertTrue(AllTrains.size() > 0);
   }
 
+  /**
+   * Gets all planes existing no of records list of records not null.
+   */
   @Test
   void getAllPlanes_ExistingNoOfRecords_ListOfRecordsNotNull() {
     List<PlaneDTO> AllPlanes = new ArrayList<>(vehicleSoapService.getAllPlanes());

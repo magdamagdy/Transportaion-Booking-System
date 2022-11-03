@@ -10,10 +10,16 @@ import com.exalt.transportationbookingsystem.models.person.dto.UserDTO;
 import com.exalt.transportationbookingsystem.models.person.mapperinterfaces.UserMapper;
 
 
+/**
+ * The type User service.
+ */
 public class userServiceImpl implements UserService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "User not found";
+    /**
+     * The User dao.
+     */
     UserDao userDao = new userDaoImpl();
 
     @Override

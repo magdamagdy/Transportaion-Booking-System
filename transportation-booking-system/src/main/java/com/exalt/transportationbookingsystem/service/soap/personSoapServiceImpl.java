@@ -16,11 +16,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * The type Person soap service.
+ */
 public class personSoapServiceImpl implements PersonSoapService{
 
     private final String driverNotFoundMsg = "Driver not found";
     private final String userNotFoundMsg = "Uer not found";
+    /**
+     * The User dao.
+     */
     UserDao userDao = new userDaoImpl();
+    /**
+     * The Driver dao.
+     */
     DriverDao driverDao = new driverDaoImpl();
     @Override
     public UserDTO getUserById(int id) throws NotFoundException {

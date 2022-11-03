@@ -23,13 +23,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * The type Vehicle soap service.
+ */
 public class vehicleSoapServiceImpl implements VehicleSoapService{
 
     private final String busNotFoundMsg = "bus not found";
     private final String trainNotFoundMsg = "train not found";
     private final String planeNotFoundMsg = "plane not found";
+    /**
+     * The Bus dao.
+     */
     BusDao busDao = new busDaoImpl();
+    /**
+     * The Train dao.
+     */
     TrainDao trainDao = new trainDaoImpl();
+    /**
+     * The Plane dao.
+     */
     PlaneDao planeDao = new planeDaoImpl();
 
     @Override

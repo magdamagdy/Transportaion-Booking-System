@@ -19,13 +19,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The type Flight service.
+ */
 public class flightServiceImpl implements FlightService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "Flight not found";
     private final String alreadyExistMsg = "Flight already exist";
+    /**
+     * The Flight dao.
+     */
     FlightDao flightDao = new flightDaoImpl();
+    /**
+     * The Plane dao.
+     */
     PlaneDao planeDao = new planeDaoImpl();
+    /**
+     * The User dao.
+     */
     UserDao userDao = new userDaoImpl();
 
     @Override

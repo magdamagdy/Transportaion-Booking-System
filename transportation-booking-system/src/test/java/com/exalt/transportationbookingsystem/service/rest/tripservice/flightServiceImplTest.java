@@ -8,9 +8,19 @@ import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.models.trip.dto.FlightDTO;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Flight service impl test.
+ */
 class flightServiceImplTest {
 
+  /**
+   * The Flight service.
+   */
   FlightService flightService = new flightServiceImpl();
+
+  /**
+   * Add flight null value throws null value exception.
+   */
   @Test
   void addFlight_NullValue_ThrowsNullValueException() {
     FlightDTO flight = new FlightDTO();
@@ -20,6 +30,9 @@ class flightServiceImplTest {
         });
   }
 
+  /**
+   * Add flight existing flight throws already exist exception.
+   */
   @Test
   void addFlight_ExistingFlight_ThrowsAlreadyExistException() {
     FlightDTO flight = new FlightDTO(1,"22-9-2022",60,"3:00","5:00","cairo","sharm el sheikh",1,"Class B",1);
@@ -29,6 +42,12 @@ class flightServiceImplTest {
         });
   }
 
+  /**
+   * Add flight new flight new record dto is consistent with returned record.
+   *
+   * @throws NullValueException    the null value exception
+   * @throws AlreadyExistException the already exist exception
+   */
   @Test
   void addFlight_NewFlight_NewRecordDtoIsConsistentWithReturnedRecord() throws NullValueException, AlreadyExistException {
     FlightDTO newRecord = new FlightDTO(2,"22-9-2022",60,"3:00","5:00","cairo","sharm el sheikh",1,"Class B",1);
@@ -46,6 +65,9 @@ class flightServiceImplTest {
     );
   }
 
+  /**
+   * Update flight null value throws null value exception.
+   */
   @Test
   void updateFlight_NullValue_ThrowsNullValueException() {
     FlightDTO flight = new FlightDTO();
@@ -55,6 +77,9 @@ class flightServiceImplTest {
         });
   }
 
+  /**
+   * Update flight not found id throws not found exception.
+   */
   @Test
   void updateFlight_NotFoundId_ThrowsNotFoundException() {
     FlightDTO flight = new FlightDTO(20,"22-9-2022",60,"3:00","5:00","cairo","sharm el sheikh",1,"Class B",1);
@@ -64,6 +89,12 @@ class flightServiceImplTest {
         });
   }
 
+  /**
+   * Update flight existing flight flight data updated.
+   *
+   * @throws NullValueException the null value exception
+   * @throws NotFoundException  the not found exception
+   */
   @Test
   void updateFlight_ExistingFlight_FlightDataUpdated() throws NullValueException, NotFoundException {
     FlightDTO existingFlight = new FlightDTO(2,"22-9-2022",60,"3:00","5:00","cairo","sharm el sheikh",1,"Class B",1);

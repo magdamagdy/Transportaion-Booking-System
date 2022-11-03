@@ -7,9 +7,19 @@ import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.models.vehicle.dto.PlaneDTO;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Plane service impl test.
+ */
 class planeServiceImplTest {
 
+  /**
+   * The Plane service.
+   */
   PlaneService planeService = new planeServiceImpl();
+
+  /**
+   * Add plane null value throws null value exception.
+   */
   @Test
   void addPlane_NullValue_ThrowsNullValueException() {
     PlaneDTO plane = new PlaneDTO();
@@ -18,6 +28,12 @@ class planeServiceImplTest {
           planeService.addPlane(plane);
         });
   }
+
+  /**
+   * Add plane new plane new record dto is consistent with returned record.
+   *
+   * @throws NullValueException the null value exception
+   */
   @Test
   void addPlane_NewPlane_NewRecordDtoIsConsistentWithReturnedRecord() throws NullValueException {
     PlaneDTO newRecord = new PlaneDTO(3,"fsd566","france","f16","white",40,1,"china airport","china airlines");
@@ -34,6 +50,9 @@ class planeServiceImplTest {
     );
   }
 
+  /**
+   * Update plane null value throws null value exception.
+   */
   @Test
   void updatePlane_NullValue_ThrowsNullValueException() {
     PlaneDTO plane = new PlaneDTO();
@@ -43,6 +62,9 @@ class planeServiceImplTest {
         });
   }
 
+  /**
+   * Update plane not found id throws not found exception.
+   */
   @Test
   void updatePlane_NotFoundId_ThrowsNotFoundException() {
     PlaneDTO plane = new PlaneDTO(30,"fsd566","france","f16","white",40,1,"china airport","china airlines");
@@ -52,6 +74,12 @@ class planeServiceImplTest {
         });
   }
 
+  /**
+   * Update plane existing plane plane data updated.
+   *
+   * @throws NullValueException the null value exception
+   * @throws NotFoundException  the not found exception
+   */
   @Test
   void updatePlane_ExistingPlane_PlaneDataUpdated() throws NullValueException, NotFoundException {
     PlaneDTO existingPlane = new PlaneDTO(3,"fsd566","france","f16","white",40,1,"china airport","china airlines");

@@ -10,12 +10,32 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Train trip dao impl test.
+ */
 class trainTripDaoImplTest {
+
+  /**
+   * The Train trip dao.
+   */
   TrainTripDao trainTripDao = new trainTripDaoImpl();
+  /**
+   * The Driver.
+   */
   DriverDB driver = new DriverDB(7,45,"male","012589367410","driver@gmail.com","dfb710",6,3.1F,7);
+  /**
+   * The Train.
+   */
   TrainDB train = new TrainDB(6, "DFQ262","Germany","fff-890","blue",300,driver,"Egypt Railways");
+  /**
+   * The User.
+   */
   UserDB user = new UserDB(8,19,"female","01223699874","user@gmail.com");
 
+  /**
+   * Save and read train trip by id new train trip new saved record is consistent with retrieved
+   * record.
+   */
   @Test
   void saveAndReadTrainTripById_NewTrainTrip_NewSavedRecordIsConsistentWithRetrievedRecord(){
     TrainTripDB newRecord =  new TrainTripDB(2,"19-05-2022",20,"1:00","6:00","Cairo","Mansoura",user,"Class A",train);
@@ -35,6 +55,9 @@ class trainTripDaoImplTest {
     trainTripDao.deleteTrainTripById(newRecord.getId());
   }
 
+  /**
+   * Update train trip existing train trip retrieved record is updated.
+   */
   @Test
   void updateTrainTrip_ExistingTrainTrip_RetrievedRecordIsUpdated() {
     trainTripDao.saveTrainTrip(
@@ -56,12 +79,18 @@ class trainTripDaoImplTest {
     trainTripDao.deleteTrainTripById(ExistingTrainTrip.getId());
   }
 
+  /**
+   * Read all train trips existing no of records list of records not null.
+   */
   @Test
   void readAllTrainTrips_ExistingNoOfRecords_ListOfRecordsNotNull() {
     List<TrainTripDB> allRecords = new ArrayList<>(trainTripDao.readAllTrainTrips());
     assertTrue(allRecords.size() > 0);
   }
 
+  /**
+   * Delete train trip by id existing train trip getting null object after delete.
+   */
   @Test
   void deleteTrainTripById_ExistingTrainTrip_GettingNullObjectAfterDelete() {
     trainTripDao.saveTrainTrip(new TrainTripDB(4,"12-05-2022",30,"1:00","6:00","Cairo","Mansora",user,"Class A",train));

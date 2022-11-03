@@ -21,20 +21,43 @@ import jakarta.jws.WebService;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Person soap client.
+ */
 @WebService
 public class personSoapClient {
 
     private final String notFoundMsg = "Object not found to delete it";
+    /**
+     * The Driver dao.
+     */
     DriverDao driverDao = new driverDaoImpl();
+    /**
+     * The User dao.
+     */
     UserDao userDao = new userDaoImpl();
+    /**
+     * The Bus trip dao.
+     */
     BusTripDao busTripDao = new busTripDaoImpl();
+    /**
+     * The Train trip dao.
+     */
     TrainTripDao trainTripDao = new trainTripDaoImpl();
+    /**
+     * The Flight dao.
+     */
     FlightDao flightDao = new flightDaoImpl();
 
+    /**
+     * Delete user by id.
+     * Cascade delete
+     * Delete all trips related to this user then delete the user itself
+     * @param id the id
+     * @throws NotFoundException the not found exception
+     */
     @WebMethod
     public void deleteUserById (int id) throws NotFoundException {
-        //Cascade delete
-        //Delete all trips related to this user then delete the user itself
         if (userDao.readUserById(id) == null){
             throw new NotFoundException(notFoundMsg);
         }
@@ -63,6 +86,12 @@ public class personSoapClient {
         userDao.deleteUserById(id);
     }
 
+    /**
+     * Delete driver by id.
+     *
+     * @param id the id
+     * @throws NotFoundException the not found exception
+     */
     @WebMethod
     public void deleteDriverById(int id) throws NotFoundException {
         if (driverDao.readDriverById(id) == null){

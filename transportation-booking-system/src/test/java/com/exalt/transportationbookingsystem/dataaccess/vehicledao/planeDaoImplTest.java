@@ -8,10 +8,24 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Plane dao impl test.
+ */
 class planeDaoImplTest {
+
+  /**
+   * The Plane dao.
+   */
   PlaneDao planeDao = new planeDaoImpl();
+  /**
+   * The Driver.
+   */
   DriverDB driver = new DriverDB(6,45,"male","012589367410","driver@gmail.com","dfb710",6,3.1F,7);
 
+  /**
+   * Save plane and read plane by id new plane new saved record is consistent with retrieved
+   * record.
+   */
   @Test
   void savePlaneAndReadPlaneById_NewPlane_NewSavedRecordIsConsistentWithRetrievedRecord(){
     PlaneDB newRecord =  new PlaneDB(3,"fgp710","France","f16-02","red",50,driver,"Cairo Airport","Egypt Airlines");
@@ -29,6 +43,9 @@ class planeDaoImplTest {
     planeDao.deletePlaneById(newRecord.getId());
   }
 
+  /**
+   * Update plane existing plane retrieved record is updated.
+   */
   @Test
   void updatePlane_ExistingPlane_RetrievedRecordIsUpdated() {
     planeDao.savePlane(new PlaneDB(4,"fgp710","France","f16-02","red",50,driver,"Cairo Airport","Egypt Airlines"));
@@ -48,12 +65,18 @@ class planeDaoImplTest {
     planeDao.deletePlaneById(ExistingPlane.getId());
   }
 
+  /**
+   * Read all planes existing no of records list of records not null.
+   */
   @Test
   void readAllPlanes_ExistingNoOfRecords_ListOfRecordsNotNull() {
     List<PlaneDB> allRecords = new ArrayList<>(planeDao.readAllPlanes());
     assertTrue(allRecords.size() > 0);
   }
 
+  /**
+   * Delete plane by id existing plane getting null object after delete.
+   */
   @Test
   void deletePlaneById_ExistingPlane_GettingNullObjectAfterDelete() {
     planeDao.savePlane(new PlaneDB(5,"klp710","France","f16-02","red",50,driver,"Cairo Airport","Egypt Airlines"));

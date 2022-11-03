@@ -10,11 +10,31 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Flight dao impl test.
+ */
 class flightDaoImplTest {
+
+  /**
+   * The Flight dao.
+   */
   FlightDao flightDao = new flightDaoImpl();
+  /**
+   * The Driver.
+   */
   DriverDB driver = new DriverDB(6,45,"male","012589367410","driver@gmail.com","dfb710",6,3.1F,7);
+  /**
+   * The Plane.
+   */
   PlaneDB plane = new PlaneDB(3,"wqv702","Germany","wf8-17","grey",250,driver,"Cairo Airport","Egypt Airlines");
+  /**
+   * The User.
+   */
   UserDB user = new UserDB(7,19,"female","01223699874","user@gmail.com");
+
+  /**
+   * Save and read flight by id new flight new saved record is consistent with retrieved record.
+   */
   @Test
   void saveAndReadFlightById_NewFlight_NewSavedRecordIsConsistentWithRetrievedRecord(){
     FlightDB newRecord =  new FlightDB(2,"22-9-2010",5,"9:00","10:30","Cairo","Aswan",user,"class A",plane);
@@ -34,6 +54,9 @@ class flightDaoImplTest {
     flightDao.deleteFlightById(newRecord.getId());
   }
 
+  /**
+   * Update flight existing flight retrieved record is updated.
+   */
   @Test
   void updateFlight_ExistingFlight_RetrievedRecordIsUpdated() {
     flightDao.saveFlight(
@@ -55,12 +78,18 @@ class flightDaoImplTest {
     flightDao.deleteFlightById(ExistingFlight.getId());
   }
 
+  /**
+   * Read all flights existing no of records list of records not null.
+   */
   @Test
   void readAllFlights_ExistingNoOfRecords_ListOfRecordsNotNull() {
     List<FlightDB> allRecords = new ArrayList<>(flightDao.readAllFlights());
     assertTrue(allRecords.size() > 0);
   }
 
+  /**
+   * Delete flight by id existing flight getting null object after delete.
+   */
   @Test
   void deleteFlightById_ExistingFlight_GettingNullObjectAfterDelete() {
     flightDao.saveFlight(new FlightDB(4,"1-9-2010",50,"9:00","10:30","Cairo","Aswan",user,"class A",plane));

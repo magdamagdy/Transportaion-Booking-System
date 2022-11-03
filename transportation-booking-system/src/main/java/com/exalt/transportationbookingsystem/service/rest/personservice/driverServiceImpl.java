@@ -9,10 +9,16 @@ import com.exalt.transportationbookingsystem.models.person.dto.DriverDTO;
 import com.exalt.transportationbookingsystem.models.person.mapperinterfaces.DriverMapper;
 
 
+/**
+ * The type Driver service.
+ */
 public class driverServiceImpl implements DriverService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "Driver not found";
+    /**
+     * The Driver dao.
+     */
     DriverDao driverDao = new driverDaoImpl();
 
     @Override

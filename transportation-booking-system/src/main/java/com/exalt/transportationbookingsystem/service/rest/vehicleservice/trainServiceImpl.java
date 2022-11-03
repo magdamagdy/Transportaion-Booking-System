@@ -11,11 +11,20 @@ import com.exalt.transportationbookingsystem.models.vehicle.dto.TrainDTO;
 import com.exalt.transportationbookingsystem.models.vehicle.mapperinterfaces.TrainMapper;
 import com.exalt.transportationbookingsystem.models.person.db.DriverDB;
 
+/**
+ * The type Train service.
+ */
 public class trainServiceImpl implements TrainService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "Train not found";
+    /**
+     * The Train dao.
+     */
     TrainDao trainDao = new trainDaoImpl();
+    /**
+     * The Driver dao.
+     */
     DriverDao driverDao = new driverDaoImpl();
     @Override
     public TrainDTO addTrain(TrainDTO train) throws NullValueException {

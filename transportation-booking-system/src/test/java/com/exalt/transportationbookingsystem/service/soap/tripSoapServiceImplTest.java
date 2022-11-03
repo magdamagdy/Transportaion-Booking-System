@@ -6,9 +6,19 @@ import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.models.person.dto.UserTripListsDTO;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Trip soap service impl test.
+ */
 class tripSoapServiceImplTest {
 
+  /**
+   * The Trip soap service.
+   */
   TripSoapService tripSoapService = new tripSoapServiceImpl();
+
+  /**
+   * Gets bus trip by id not found id throws not found exception.
+   */
   @Test
   void getBusTripById_NotFoundId_ThrowsNotFoundException() {
     assertThrows(NotFoundException.class,
@@ -17,6 +27,9 @@ class tripSoapServiceImplTest {
         });
   }
 
+  /**
+   * Gets train trip by id not found id throws not found exception.
+   */
   @Test
   void getTrainTripById_NotFoundId_ThrowsNotFoundException() {
     assertThrows(NotFoundException.class,
@@ -25,6 +38,9 @@ class tripSoapServiceImplTest {
         });
   }
 
+  /**
+   * Gets flight by id not found id throws not found exception.
+   */
   @Test
   void getFlightById_NotFoundId_ThrowsNotFoundException() {
     assertThrows(NotFoundException.class,
@@ -32,6 +48,10 @@ class tripSoapServiceImplTest {
           tripSoapService.getFlightById(30);
         });
   }
+
+  /**
+   * Gets all trips by user id not found id throws not found exception.
+   */
   @Test
   void getAllTripsByUserId_NotFoundId_ThrowsNotFoundException() {
     assertThrows(NotFoundException.class,
@@ -40,6 +60,11 @@ class tripSoapServiceImplTest {
         });
   }
 
+  /**
+   * Gets all trips by user id existing user with existing trips not null user trip lists dto.
+   *
+   * @throws NotFoundException the not found exception
+   */
   @Test
   void getAllTripsByUserId_ExistingUserWithExistingTrips_NotNullUserTripListsDTO()
       throws NotFoundException {

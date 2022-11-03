@@ -12,11 +12,20 @@ import com.exalt.transportationbookingsystem.models.vehicle.mapperinterfaces.Bus
 import com.exalt.transportationbookingsystem.models.person.db.DriverDB;
 
 
+/**
+ * The type Bus service.
+ */
 public class busServiceImpl implements BusService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "Bus not found";
+    /**
+     * The Bus dao.
+     */
     BusDao busDao = new busDaoImpl();
+    /**
+     * The Driver dao.
+     */
     DriverDao driverDao = new driverDaoImpl();
     @Override
     public BusDTO addBus(BusDTO bus) throws NullValueException {
