@@ -52,7 +52,6 @@ public class TrainTripDB extends TripDB {
         this.train = train;
     }
 
-
     /**
      * Instantiates a new Train trip db.
      *
@@ -68,9 +67,7 @@ public class TrainTripDB extends TripDB {
      * @param train         the train
      */
     public TrainTripDB(int id, String date, int seatNo, String departureTime, String arrivalTime,
-        String startLocation, String destination,
-        UserDB user, String trainClass,
-        TrainDB train) {
+        String startLocation, String destination, UserDB user, String trainClass, TrainDB train) {
         super(id, date, seatNo, departureTime, arrivalTime, startLocation, destination, user);
         this.trainClass = trainClass;
         this.train = train;

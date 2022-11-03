@@ -12,13 +12,13 @@ import org.junit.jupiter.api.Test;
 
 class trainTripDaoImplTest {
   TrainTripDao trainTripDao = new trainTripDaoImpl();
-  DriverDB driver = new DriverDB(6,45,"male","012589367410","driver@gmail.com","dfb710",6,3.1F,7);
+  DriverDB driver = new DriverDB(7,45,"male","012589367410","driver@gmail.com","dfb710",6,3.1F,7);
   TrainDB train = new TrainDB(6, "DFQ262","Germany","fff-890","blue",300,driver,"Egypt Railways");
-  UserDB user = new UserDB(7,19,"female","01223699874","user@gmail.com");
+  UserDB user = new UserDB(8,19,"female","01223699874","user@gmail.com");
 
   @Test
   void saveAndReadTrainTripById_NewTrainTrip_NewSavedRecordIsConsistentWithRetrievedRecord(){
-    TrainTripDB newRecord =  new TrainTripDB(2,"19-05-2022",20,"1:00","6:00","Cairo","Mansora",user,"Class A",train);
+    TrainTripDB newRecord =  new TrainTripDB(2,"19-05-2022",20,"1:00","6:00","Cairo","Mansoura",user,"Class A",train);
     trainTripDao.saveTrainTrip(newRecord);
     TrainTripDB retrievedRecord = trainTripDao.readTrainTripById(newRecord.getId());
     assertTrue(newRecord.getId() == retrievedRecord.getId() &&
@@ -66,6 +66,6 @@ class trainTripDaoImplTest {
   void deleteTrainTripById_ExistingTrainTrip_GettingNullObjectAfterDelete() {
     trainTripDao.saveTrainTrip(new TrainTripDB(4,"12-05-2022",30,"1:00","6:00","Cairo","Mansora",user,"Class A",train));
     trainTripDao.deleteTrainTripById(4);
-    assertEquals(trainTripDao.readTrainTripById(4), null);
+    assertNull(trainTripDao.readTrainTripById(4));
   }
 }

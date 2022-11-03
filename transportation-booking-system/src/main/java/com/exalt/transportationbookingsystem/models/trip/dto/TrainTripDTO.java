@@ -1,6 +1,7 @@
 package com.exalt.transportationbookingsystem.models.trip.dto;
 
 
+import com.exalt.transportationbookingsystem.models.person.dto.UserDTO;
 import com.exalt.transportationbookingsystem.models.vehicle.dto.TrainDTO;
 
 /**
@@ -68,4 +69,34 @@ public class TrainTripDTO extends TripDTO {
     public void setRefTrain(TrainDTO refTrain) {
         this.refTrain = refTrain;
     }
+
+    /**
+     * Instantiates a new Train trip dto.
+     */
+    public TrainTripDTO() {
+    }
+
+    /**
+     * Instantiates a new Train trip dto.
+     *
+     * @param id            the id
+     * @param date          the date
+     * @param seatNo        the seat no
+     * @param departureTime the departure time
+     * @param arrivalTime   the arrival time
+     * @param startLocation the start location
+     * @param destination   the destination
+     * @param refUserId     the ref user id
+     * @param trainClass    the train class
+     * @param refTrainId    the ref train id
+     */
+    public TrainTripDTO(int id, String date, int seatNo, String departureTime, String arrivalTime,
+        String startLocation, String destination, Integer refUserId,
+         String trainClass,
+        Integer refTrainId) {
+        super(id, date, seatNo, departureTime, arrivalTime, startLocation, destination, refUserId);
+        this.trainClass = trainClass;
+        this.refTrainId = refTrainId;
+    }
+
 }

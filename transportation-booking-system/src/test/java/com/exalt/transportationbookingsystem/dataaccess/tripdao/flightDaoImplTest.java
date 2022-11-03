@@ -65,6 +65,6 @@ class flightDaoImplTest {
   void deleteFlightById_ExistingFlight_GettingNullObjectAfterDelete() {
     flightDao.saveFlight(new FlightDB(4,"1-9-2010",50,"9:00","10:30","Cairo","Aswan",user,"class A",plane));
     flightDao.deleteFlightById(4);
-    assertEquals(flightDao.readFlightById(4), null);
+    assertNull(flightDao.readFlightById(4));
   }
 }

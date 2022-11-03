@@ -65,6 +65,6 @@ class busTripDaoImplTest {
   void deleteBusTripById_ExistingBusTrip_GettingNullObjectAfterDelete() {
     busTripDao.saveBusTrip(new BusTripDB(4, "30-9-2010", 20, "9:00", "11:30", "Cairo", "Alex", user, bus));
     busTripDao.deleteBusTripById(4);
-    assertEquals(busTripDao.readBusTripById(4), null);
+    assertNull(busTripDao.readBusTripById(4));
   }
 }

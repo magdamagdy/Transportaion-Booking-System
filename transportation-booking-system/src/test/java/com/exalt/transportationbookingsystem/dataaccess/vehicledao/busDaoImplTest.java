@@ -22,8 +22,7 @@ class busDaoImplTest {
         newRecord.getManifacCountry().equals(retrievedRecord.getManifacCountry()) &&
         newRecord.getModel() .equals( retrievedRecord.getModel()) &&
         newRecord.getColour() .equals(retrievedRecord.getColour()) &&
-        newRecord.getNoOfSeats() == retrievedRecord.getNoOfSeats() &&
-        newRecord.getDriver().getId() == retrievedRecord.getDriver().getId()
+        newRecord.getNoOfSeats() == retrievedRecord.getNoOfSeats()
     );
     busDao.deleteBusById(newRecord.getId());
   }
@@ -54,6 +53,6 @@ class busDaoImplTest {
   void deleteBusById_ExistingBus_GettingNullObjectAfterDelete() {
     busDao.saveBus(new BusDB(5,"fga710","France","c80","red",50,driver));
     busDao.deleteBusById(5);
-    assertEquals(busDao.readBusById(5), null);
+    assertNull(busDao.readBusById(5));
   }
 }

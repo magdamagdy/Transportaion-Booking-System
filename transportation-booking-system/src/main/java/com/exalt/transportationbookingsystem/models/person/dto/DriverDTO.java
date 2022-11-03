@@ -82,4 +82,32 @@ public class DriverDTO extends PersonDTO {
     public void setNoOfRatings(int noOfRatings) {
         this.noOfRatings = noOfRatings;
     }
+
+    /**
+     * Instantiates a new Driver dto.
+     */
+    public DriverDTO() {
+    }
+
+    /**
+     * Instantiates a new Driver dto.
+     *
+     * @param id          the id
+     * @param age         the age
+     * @param gender      the gender
+     * @param phone       the phone
+     * @param email       the email
+     * @param license     the license
+     * @param yearsOfExp  the years of exp
+     * @param rate        the rate
+     * @param noOfRatings the no of ratings
+     */
+    public DriverDTO(int id, int age, String gender, String phone, String email, String license,
+        int yearsOfExp, Float rate, int noOfRatings) {
+        super(id, age, gender, phone, email);
+        this.license = license;
+        this.yearsOfExp = yearsOfExp;
+        this.rate = rate;
+        this.noOfRatings = noOfRatings;
+    }
 }

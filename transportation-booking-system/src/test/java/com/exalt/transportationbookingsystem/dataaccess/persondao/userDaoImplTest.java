@@ -50,6 +50,6 @@ class userDaoImplTest {
   void deleteUserById_ExistingUser_GettingNullObjectAfterDelete() {
     userDao.saveUser(new UserDB(6, 40, "male", "01016300002", "test3User@gmail.com"));
     userDao.deleteUserById(6);
-    assertEquals(userDao.readUserById(6), null);
+    assertNull(userDao.readUserById(6));
   }
 }

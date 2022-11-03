@@ -185,4 +185,32 @@ public class VehicleDTO {
     public void setNoOfSeats(int noOfSeats) {
         this.noOfSeats = noOfSeats;
     }
+
+    /**
+     * Instantiates a new Vehicle dto.
+     */
+    public VehicleDTO() {
+    }
+
+    /**
+     * Instantiates a new Vehicle dto.
+     *
+     * @param id             the id
+     * @param license        the license
+     * @param manifacCountry the manifac country
+     * @param model          the model
+     * @param colour         the colour
+     * @param noOfSeats      the no of seats
+     * @param refDriverId    the ref driver id
+     */
+    public VehicleDTO(int id, String license, String manifacCountry, String model, String colour,
+        int noOfSeats, Integer refDriverId) {
+        this.id = id;
+        this.license = license;
+        this.manifacCountry = manifacCountry;
+        this.model = model;
+        this.colour = colour;
+        this.noOfSeats = noOfSeats;
+        this.refDriverId = refDriverId;
+    }
 }

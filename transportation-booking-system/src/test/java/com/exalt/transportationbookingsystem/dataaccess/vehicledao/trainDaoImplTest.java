@@ -23,7 +23,6 @@ class trainDaoImplTest {
         newRecord.getModel() .equals( retrievedRecord.getModel()) &&
         newRecord.getColour() .equals(retrievedRecord.getColour()) &&
         newRecord.getNoOfSeats() == retrievedRecord.getNoOfSeats() &&
-        newRecord.getDriver().getId() == retrievedRecord.getDriver().getId() &&
         newRecord.getRailwayStation().equals(retrievedRecord.getRailwayStation())
     );
     trainDao.deleteTrainById(newRecord.getId());
@@ -57,6 +56,6 @@ class trainDaoImplTest {
   void deleteTrainById_ExistingTrain_GettingNullObjectAfterDelete() {
     trainDao.saveTrain((new TrainDB(5,"fgp710","France","c80","red",50,driver,"Cairo Railways")));
     trainDao.deleteTrainById(5);
-    assertEquals(trainDao.readTrainById(5), null);
+    assertNull(trainDao.readTrainById(5));
   }
 }

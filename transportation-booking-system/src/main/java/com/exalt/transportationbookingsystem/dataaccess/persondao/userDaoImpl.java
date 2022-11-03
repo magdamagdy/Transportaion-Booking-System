@@ -23,7 +23,7 @@ public class userDaoImpl implements UserDao {
 
   @Override
   public void updateUser(UserDB user){
-      aerospike.mapper.update(age,gender ,phone ,email);
+      aerospike.mapper.update(user,age,gender ,phone ,email);
   }
 
   @Override

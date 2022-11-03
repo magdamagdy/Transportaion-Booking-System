@@ -1,5 +1,6 @@
 package com.exalt.transportationbookingsystem.dataaccess.persondao;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.exalt.transportationbookingsystem.models.person.db.DriverDB;
@@ -60,7 +61,7 @@ class driverDaoImplTest {
     driverDao.saveDriver(new DriverDB(6,40,"male","01096300002","test3Driver@gmail.com",
         "jkb901",8,5F,9));
     driverDao.deleteDriverById(6);
-    assertEquals(driverDao.readDriverById(6), null);
+    assertNull(driverDao.readDriverById(6));
   }
 
 

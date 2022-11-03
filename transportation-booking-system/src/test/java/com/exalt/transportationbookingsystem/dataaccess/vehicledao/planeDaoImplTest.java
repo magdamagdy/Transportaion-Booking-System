@@ -23,7 +23,6 @@ class planeDaoImplTest {
         newRecord.getModel() .equals( retrievedRecord.getModel()) &&
         newRecord.getColour() .equals(retrievedRecord.getColour()) &&
         newRecord.getNoOfSeats() == retrievedRecord.getNoOfSeats() &&
-        newRecord.getDriver().getId() == retrievedRecord.getDriver().getId() &&
         newRecord.getAirport().equals(retrievedRecord.getAirport()) &&
         newRecord.getAirlines().equals(retrievedRecord.getAirlines())
     );
@@ -59,6 +58,6 @@ class planeDaoImplTest {
   void deletePlaneById_ExistingPlane_GettingNullObjectAfterDelete() {
     planeDao.savePlane(new PlaneDB(5,"klp710","France","f16-02","red",50,driver,"Cairo Airport","Egypt Airlines"));
     planeDao.deletePlaneById(5);
-    assertEquals(planeDao.readPlaneById(5), null);
+    assertNull(planeDao.readPlaneById(5));
   }
 }

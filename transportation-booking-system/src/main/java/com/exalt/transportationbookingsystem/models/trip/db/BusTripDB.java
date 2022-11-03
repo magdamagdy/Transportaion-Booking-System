@@ -32,7 +32,6 @@ public class BusTripDB extends TripDB {
         this.bus = bus;
     }
 
-
     /**
      * Instantiates a new Bus trip db.
      *
@@ -47,8 +46,7 @@ public class BusTripDB extends TripDB {
      * @param bus           the bus
      */
     public BusTripDB(int id, String date, int seatNo, String departureTime, String arrivalTime,
-        String startLocation, String destination,
-        UserDB user, BusDB bus) {
+        String startLocation, String destination, UserDB user, BusDB bus) {
         super(id, date, seatNo, departureTime, arrivalTime, startLocation, destination, user);
         this.bus = bus;
     }

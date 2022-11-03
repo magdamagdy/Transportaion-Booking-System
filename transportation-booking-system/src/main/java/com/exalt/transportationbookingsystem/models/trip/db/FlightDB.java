@@ -52,7 +52,6 @@ public class FlightDB extends TripDB {
         this.plane = plane;
     }
 
-
     /**
      * Instantiates a new Flight db.
      *
@@ -68,9 +67,7 @@ public class FlightDB extends TripDB {
      * @param plane         the plane
      */
     public FlightDB(int id, String date, int seatNo, String departureTime, String arrivalTime,
-        String startLocation, String destination,
-        UserDB user, String flightClass,
-        PlaneDB plane) {
+        String startLocation, String destination, UserDB user, String flightClass, PlaneDB plane) {
         super(id, date, seatNo, departureTime, arrivalTime, startLocation, destination, user);
         this.flightClass = flightClass;
         this.plane = plane;

@@ -117,6 +117,26 @@ public class PersonDTO {
         this.email = email;
     }
 
+    /**
+     * Instantiates a new Person dto.
+     */
+    public PersonDTO() {
+    }
 
-
+    /**
+     * Instantiates a new Person dto.
+     *
+     * @param id     the id
+     * @param age    the age
+     * @param gender the gender
+     * @param phone  the phone
+     * @param email  the email
+     */
+    public PersonDTO(int id, int age, String gender, String phone, String email) {
+        this.id = id;
+        this.age = age;
+        this.gender = gender;
+        this.phone = phone;
+        this.email = email;
+    }
 }

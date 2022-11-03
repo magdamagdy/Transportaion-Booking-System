@@ -207,4 +207,35 @@ public class TripDTO {
     public void setRefUser(UserDTO refUser) {
         this.refUser = refUser;
     }
+
+    /**
+     * Instantiates a new Trip dto.
+     */
+    public TripDTO() {
+    }
+
+    /**
+     * Instantiates a new Trip dto.
+     *
+     * @param id            the id
+     * @param date          the date
+     * @param seatNo        the seat no
+     * @param departureTime the departure time
+     * @param arrivalTime   the arrival time
+     * @param startLocation the start location
+     * @param destination   the destination
+     * @param refUserId     the ref user id
+     */
+    public TripDTO(int id, String date, int seatNo, String departureTime, String arrivalTime,
+        String startLocation, String destination, Integer refUserId) {
+        this.id = id;
+        this.date = date;
+        this.seatNo = seatNo;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
+        this.startLocation = startLocation;
+        this.destination = destination;
+        this.refUserId = refUserId;
+    }
+
 }
