@@ -1,8 +1,8 @@
-# Transportaion-Booking-System
+# Transportaion-Booking-System 
+This is a simple monolithic webservice application, it allow users to book any number of bus-trips, train-trips, and flights. 
+The trip entities are designed as to be providing all details including (the user who booked the trip, the vehicle assigned to this trip and the driver of the vehicle)    
 
-
-## Application Summary 
-Implemented monolithic backend application providing services of SOAP & REST APIs for Transportaion-Booking-System using Javax and Aerospike Database.    
+providing services of SOAP & REST APIs for Transportaion-Booking-System using Javax and Aerospike Database.    
 
 
 ## Attachment
