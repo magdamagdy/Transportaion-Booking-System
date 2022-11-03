@@ -1,12 +1,21 @@
 # Transportaion-Booking-System 
 This is a simple monolithic webservice application, it allow users to book any number of bus-trips, train-trips, and flights. 
-The trip entities are designed as to be providing all details including (the user who booked the trip, the vehicle assigned to this trip and the driver of the vehicle)    
-
-providing services of SOAP & REST APIs for Transportaion-Booking-System using Javax and Aerospike Database.    
+The trip entities are designed as to be providing all trip details including (the user who booked the trip, the vehicle assigned to this trip and the driver of the vehicle)    
+    
+## Technologies 
+* jax-rs for REST webservices
+* jax-ws for SOAP webservices
+* Glassfish server Version 6.0.0
+* Aerospike Database using Docker image ce-6.0.0
+* logback logger
+* Junit testing Version 5
+* mapstruct
+* postman
+* google formater
 
 
 ## Attachment
-attached postman collection for endpoints
+attached postman collection for all endpoints
   
 
 ## Entities and System logic 
