@@ -10,20 +10,18 @@ The trip entities are designed as to be providing all trip details including (th
 * logback logger
 * Junit testing Version 5
 * mapstruct
-* postman
-* google formater
-
-
-## Attachment
-attached postman collection for all endpoints
   
 
 ## Entities and System logic 
 ![Entities and System logic](https://github.com/magdamagdy/Transportaion-Booking-System-/blob/main/system%20logic.png)
 
+## Class Diagram
 
 
 
 
 ## Database design
 ![Relational Model](https://github.com/magdamagdy/Transportaion-Booking-System-/blob/main/DB%20Relational%20Model.png)
+
+## Attachment
+attached postman collection for all endpoints
