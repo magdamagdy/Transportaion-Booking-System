@@ -16,6 +16,7 @@ The trip entities are designed as to be providing all trip details including (th
 ![Entities and System logic](https://github.com/magdamagdy/Transportaion-Booking-System-/blob/main/system%20logic.png)
 
 ## Class Diagram
+![Class Diagram](https://github.com/magdamagdy/transportaion-booking-system/blob/main/UML%20.png)
 
 
 
