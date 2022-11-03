@@ -1,11 +1,11 @@
 package com.exalt.transportationbookingsystem.service.soap;
 
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.BusDao;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.PlaneDao;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.TrainDao;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.busDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.planeDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.trainDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.BusRepository;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.PlaneRepository;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.TrainRepository;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.BusRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.PlaneRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.TrainRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.models.vehicle.db.BusDB;
 import com.exalt.transportationbookingsystem.models.vehicle.db.PlaneDB;
@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * The type Vehicle soap service.
  */
-public class vehicleSoapServiceImpl implements VehicleSoapService{
+public class VehicleSoapServiceImpl implements VehicleSoapService{
 
     private final String busNotFoundMsg = "bus not found";
     private final String trainNotFoundMsg = "train not found";
@@ -34,15 +34,15 @@ public class vehicleSoapServiceImpl implements VehicleSoapService{
     /**
      * The Bus dao.
      */
-    BusDao busDao = new busDaoImpl();
+    BusRepository busDao = new BusRepositoryImpl();
     /**
      * The Train dao.
      */
-    TrainDao trainDao = new trainDaoImpl();
+    TrainRepository trainDao = new TrainRepositoryImpl();
     /**
      * The Plane dao.
      */
-    PlaneDao planeDao = new planeDaoImpl();
+    PlaneRepository planeDao = new PlaneRepositoryImpl();
 
     @Override
     public BusDTO getBusById(int id) throws NotFoundException {

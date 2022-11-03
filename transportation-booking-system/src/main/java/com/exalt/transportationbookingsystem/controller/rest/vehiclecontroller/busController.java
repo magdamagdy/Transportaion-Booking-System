@@ -3,7 +3,7 @@ package com.exalt.transportationbookingsystem.controller.rest.vehiclecontroller;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.service.rest.vehicleservice.BusService;
-import com.exalt.transportationbookingsystem.service.rest.vehicleservice.busServiceImpl;
+import com.exalt.transportationbookingsystem.service.rest.vehicleservice.BusServiceImpl;
 import com.exalt.transportationbookingsystem.models.vehicle.dto.BusDTO;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -15,16 +15,16 @@ import org.slf4j.LoggerFactory;
  * The type Bus controller.
  */
 @Path("/bus")
-public class busController {
+public class BusController {
 
     private final String nullWarningMsg = "Posted null value object or null id";
     private final String notFoundWarningMsg = "Object not found when searching by id";
     private final String internalServerErrorMsg = "Internal server error";
-    private static final Logger LOGGER = LoggerFactory.getLogger(busController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BusController.class);
     /**
      * The Bus service.
      */
-    BusService busService = new busServiceImpl();
+    BusService busService = new BusServiceImpl();
 
     /**
      * Create bus response.

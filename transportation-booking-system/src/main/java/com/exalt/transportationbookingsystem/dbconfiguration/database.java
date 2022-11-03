@@ -12,7 +12,7 @@ import java.util.Properties;
  * The type Database.
  */
 // Singleton design pattern for database
-public class database {
+public class Database {
 
     /**
      * The constant mapper.
@@ -22,7 +22,7 @@ public class database {
     /**
      * private constructor provides the actual connection to database server
      */
-    private database(){
+    private Database(){
         try (InputStream input = new FileInputStream("D:/Exalt/Training/Sample Project/transportation-booking-system/src/main/resources/config.properties")){
             Properties prop = new Properties();
             prop.load(input);
@@ -43,7 +43,7 @@ public class database {
      * Bill Pugh approach
      */
     private static class databaseHolder {
-        private static final database instanceHolder = new database();
+        private static final Database instanceHolder = new Database();
     }
 
     /**
@@ -51,7 +51,7 @@ public class database {
      * The method that controls access to the singleton instance
      * @return the database
      */
-    public static database getInstance(){
+    public static Database getInstance(){
         return databaseHolder.instanceHolder;
     }
 

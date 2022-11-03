@@ -1,8 +1,8 @@
 package com.exalt.transportationbookingsystem.service.rest.personservice;
 
 
-import com.exalt.transportationbookingsystem.dataaccess.persondao.UserDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.userDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.models.person.db.UserDB;
@@ -13,14 +13,14 @@ import com.exalt.transportationbookingsystem.models.person.mapperinterfaces.User
 /**
  * The type User service.
  */
-public class userServiceImpl implements UserService {
+public class UserServiceImpl implements UserService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "User not found";
     /**
      * The User dao.
      */
-    UserDao userDao = new userDaoImpl();
+    UserRepository userDao = new UserRepositoryImpl();
 
     @Override
     public UserDTO addUser(UserDTO user) throws NullValueException {

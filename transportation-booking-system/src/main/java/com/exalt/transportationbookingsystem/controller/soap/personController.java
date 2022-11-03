@@ -4,7 +4,7 @@ import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.models.person.dto.DriverDTO;
 import com.exalt.transportationbookingsystem.models.person.dto.UserDTO;
 import com.exalt.transportationbookingsystem.service.soap.PersonSoapService;
-import com.exalt.transportationbookingsystem.service.soap.personSoapServiceImpl;
+import com.exalt.transportationbookingsystem.service.soap.PersonSoapServiceImpl;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
 import java.util.List;
@@ -15,14 +15,14 @@ import org.slf4j.LoggerFactory;
  * The type Person controller.
  */
 @WebService
-public class personController {
+public class PersonController {
 
   private final String notFoundWarningMsg = "Object not found when searching by id";
   /**
    * The Person service.
    */
-  PersonSoapService personService = new personSoapServiceImpl();
-  private static final Logger LOGGER = LoggerFactory.getLogger(personController.class);
+  PersonSoapService personService = new PersonSoapServiceImpl();
+  private static final Logger LOGGER = LoggerFactory.getLogger(PersonController.class);
 
   /**
    * Gets user by id.

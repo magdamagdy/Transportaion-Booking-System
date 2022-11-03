@@ -1,13 +1,13 @@
 package com.exalt.transportationbookingsystem.service.soap;
 
-import com.exalt.transportationbookingsystem.dataaccess.persondao.UserDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.userDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.BusTripDao;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.FlightDao;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.TrainTripDao;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.busTripDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.flightDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.trainTripDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.BusTripRepository;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.FlightRepository;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.TrainTripRepository;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.BusTripRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.FlightRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.TrainTripRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.models.trip.db.BusTripDB;
 import com.exalt.transportationbookingsystem.models.trip.db.FlightDB;
@@ -34,7 +34,7 @@ import com.exalt.transportationbookingsystem.models.person.mapperinterfaces.User
 /**
  * The type Trip soap service.
  */
-public class tripSoapServiceImpl implements TripSoapService{
+public class TripSoapServiceImpl implements TripSoapService{
 
 
     private final String busTripNotFoundMsg = "busTrip not found";
@@ -44,19 +44,19 @@ public class tripSoapServiceImpl implements TripSoapService{
     /**
      * The Bus trip dao.
      */
-    BusTripDao busTripDao = new busTripDaoImpl();
+    BusTripRepository busTripDao = new BusTripRepositoryImpl();
     /**
      * The Train trip dao.
      */
-    TrainTripDao trainTripDao = new trainTripDaoImpl();
+    TrainTripRepository trainTripDao = new TrainTripRepositoryImpl();
     /**
      * The Flight dao.
      */
-    FlightDao flightDao = new flightDaoImpl();
+    FlightRepository flightDao = new FlightRepositoryImpl();
     /**
      * The User dao.
      */
-    UserDao userDao = new userDaoImpl();
+    UserRepository userDao = new UserRepositoryImpl();
     @Override
     public BusTripDTO getBusTripById(int id) throws NotFoundException {
         BusTripDB busTripDB = busTripDao.readBusTripById(id);

@@ -2,7 +2,7 @@ package com.exalt.transportationbookingsystem.controller.soap;
 
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.service.soap.TripSoapService;
-import com.exalt.transportationbookingsystem.service.soap.tripSoapServiceImpl;
+import com.exalt.transportationbookingsystem.service.soap.TripSoapServiceImpl;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
 import org.slf4j.Logger;
@@ -12,15 +12,15 @@ import org.slf4j.LoggerFactory;
  * The type Trip controller.
  */
 @WebService
-public class tripController {
+public class TripController {
 
   private final String notFoundWarningMsg = "Object not found when searching by id";
-  private static final Logger LOGGER = LoggerFactory.getLogger(tripController.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(TripController.class);
 
   /**
    * The Trip service.
    */
-  TripSoapService tripService = new tripSoapServiceImpl();
+  TripSoapService tripService = new TripSoapServiceImpl();
 
   /**
    * Get bus trip by id object.

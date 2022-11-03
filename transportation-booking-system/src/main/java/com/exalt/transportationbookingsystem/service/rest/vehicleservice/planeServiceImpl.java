@@ -1,9 +1,9 @@
 package com.exalt.transportationbookingsystem.service.rest.vehicleservice;
 
-import com.exalt.transportationbookingsystem.dataaccess.persondao.DriverDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.driverDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.PlaneDao;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.planeDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.DriverRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.DriverRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.PlaneRepository;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.PlaneRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.models.vehicle.db.PlaneDB;
@@ -14,18 +14,18 @@ import com.exalt.transportationbookingsystem.models.person.db.DriverDB;
 /**
  * The type Plane service.
  */
-public class planeServiceImpl implements PlaneService {
+public class PlaneServiceImpl implements PlaneService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "Plane not found";
     /**
      * The Plane dao.
      */
-    PlaneDao planeDao = new planeDaoImpl();
+    PlaneRepository planeDao = new PlaneRepositoryImpl();
     /**
      * The Driver dao.
      */
-    DriverDao driverDao = new driverDaoImpl();
+    DriverRepository driverDao = new DriverRepositoryImpl();
     @Override
     public PlaneDTO addPlane(PlaneDTO plane) throws NullValueException {
         if (plane.getId()==0){

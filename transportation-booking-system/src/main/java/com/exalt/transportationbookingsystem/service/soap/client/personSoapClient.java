@@ -1,16 +1,16 @@
 package com.exalt.transportationbookingsystem.service.soap.client;
 
 
-import com.exalt.transportationbookingsystem.dataaccess.persondao.DriverDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.UserDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.driverDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.userDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.BusTripDao;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.FlightDao;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.TrainTripDao;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.busTripDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.flightDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.trainTripDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.DriverRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.DriverRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.BusTripRepository;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.FlightRepository;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.TrainTripRepository;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.BusTripRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.FlightRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.TrainTripRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.models.trip.db.BusTripDB;
 import com.exalt.transportationbookingsystem.models.trip.db.FlightDB;
@@ -25,29 +25,29 @@ import java.util.List;
  * The type Person soap client.
  */
 @WebService
-public class personSoapClient {
+public class PersonSoapClient {
 
     private final String notFoundMsg = "Object not found to delete it";
     /**
      * The Driver dao.
      */
-    DriverDao driverDao = new driverDaoImpl();
+    DriverRepository driverDao = new DriverRepositoryImpl();
     /**
      * The User dao.
      */
-    UserDao userDao = new userDaoImpl();
+    UserRepository userDao = new UserRepositoryImpl();
     /**
      * The Bus trip dao.
      */
-    BusTripDao busTripDao = new busTripDaoImpl();
+    BusTripRepository busTripDao = new BusTripRepositoryImpl();
     /**
      * The Train trip dao.
      */
-    TrainTripDao trainTripDao = new trainTripDaoImpl();
+    TrainTripRepository trainTripDao = new TrainTripRepositoryImpl();
     /**
      * The Flight dao.
      */
-    FlightDao flightDao = new flightDaoImpl();
+    FlightRepository flightDao = new FlightRepositoryImpl();
 
     /**
      * Delete user by id.

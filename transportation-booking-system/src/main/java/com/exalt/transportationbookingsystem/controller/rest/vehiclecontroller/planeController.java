@@ -3,7 +3,7 @@ package com.exalt.transportationbookingsystem.controller.rest.vehiclecontroller;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.service.rest.vehicleservice.PlaneService;
-import com.exalt.transportationbookingsystem.service.rest.vehicleservice.planeServiceImpl;
+import com.exalt.transportationbookingsystem.service.rest.vehicleservice.PlaneServiceImpl;
 import com.exalt.transportationbookingsystem.models.vehicle.dto.PlaneDTO;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -15,16 +15,16 @@ import org.slf4j.LoggerFactory;
  * The type Plane controller.
  */
 @Path("/plane")
-public class planeController {
+public class PlaneController {
 
     private final String nullWarningMsg = "Posted null value object or null id";
     private final String notFoundWarningMsg = "Object not found when searching by id";
     private final String internalServerErrorMsg = "Internal server error";
-    private static final Logger LOGGER = LoggerFactory.getLogger(planeController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PlaneController.class);
     /**
      * The Plane service.
      */
-    PlaneService planeService = new planeServiceImpl();
+    PlaneService planeService = new PlaneServiceImpl();
 
     /**
      * Add plane response.

@@ -3,7 +3,7 @@ package com.exalt.transportationbookingsystem.controller.rest.personcontroller;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.service.rest.personservice.UserService;
-import com.exalt.transportationbookingsystem.service.rest.personservice.userServiceImpl;
+import com.exalt.transportationbookingsystem.service.rest.personservice.UserServiceImpl;
 import com.exalt.transportationbookingsystem.models.person.dto.UserDTO;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -16,15 +16,15 @@ import org.slf4j.LoggerFactory;
  * The type User controller.
  */
 @Path("/user")
-public class userController {
+public class UserController {
     private final String nullWarningMsg = "Posted null value object or null id";
     private final String notFoundWarningMsg = "Object not found when searching by id";
     private final String internalServerErrorMsg = "Internal server error";
-    private static final Logger LOGGER = LoggerFactory.getLogger(userController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
     /**
      * The User service.
      */
-    UserService userService = new userServiceImpl();
+    UserService userService = new UserServiceImpl();
 
     /**
      * Create user response.

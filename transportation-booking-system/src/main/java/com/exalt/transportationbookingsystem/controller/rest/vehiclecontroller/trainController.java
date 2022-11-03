@@ -3,7 +3,7 @@ package com.exalt.transportationbookingsystem.controller.rest.vehiclecontroller;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.service.rest.vehicleservice.TrainService;
-import com.exalt.transportationbookingsystem.service.rest.vehicleservice.trainServiceImpl;
+import com.exalt.transportationbookingsystem.service.rest.vehicleservice.TrainServiceImpl;
 import com.exalt.transportationbookingsystem.models.vehicle.dto.TrainDTO;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -15,15 +15,15 @@ import org.slf4j.LoggerFactory;
  * The type Train controller.
  */
 @Path("/train")
-public class trainController {
+public class TrainController {
     private final String nullWarningMsg = "Posted null value object or null id";
     private final String notFoundWarningMsg = "Object not found when searching by id";
     private final String internalServerErrorMsg = "Internal server error";
-    private static final Logger LOGGER = LoggerFactory.getLogger(trainController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TrainController.class);
     /**
      * The Train service.
      */
-    TrainService trainService = new trainServiceImpl();
+    TrainService trainService = new TrainServiceImpl();
 
     /**
      * Add train response.

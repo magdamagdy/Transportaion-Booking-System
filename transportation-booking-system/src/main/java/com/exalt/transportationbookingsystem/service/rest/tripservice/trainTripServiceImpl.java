@@ -1,11 +1,11 @@
 package com.exalt.transportationbookingsystem.service.rest.tripservice;
 
-import com.exalt.transportationbookingsystem.dataaccess.persondao.UserDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.userDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.TrainTripDao;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.trainTripDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.TrainDao;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.trainDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.TrainTripRepository;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.TrainTripRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.TrainRepository;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.TrainRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.AlreadyExistException;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * The type Train trip service.
  */
-public class trainTripServiceImpl implements TrainTripService {
+public class TrainTripServiceImpl implements TrainTripService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "TrainTrip not found";
@@ -31,15 +31,15 @@ public class trainTripServiceImpl implements TrainTripService {
     /**
      * The Train trip dao.
      */
-    TrainTripDao trainTripDao = new trainTripDaoImpl();
+    TrainTripRepository trainTripDao = new TrainTripRepositoryImpl();
     /**
      * The Train dao.
      */
-    TrainDao trainDao = new trainDaoImpl();
+    TrainRepository trainDao = new TrainRepositoryImpl();
     /**
      * The User dao.
      */
-    UserDao userDao = new userDaoImpl();
+    UserRepository userDao = new UserRepositoryImpl();
     @Override
     public TrainTripDTO addTrainTrip(TrainTripDTO trainTrip)
         throws NullValueException, AlreadyExistException {

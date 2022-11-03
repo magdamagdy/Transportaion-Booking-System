@@ -1,11 +1,11 @@
 package com.exalt.transportationbookingsystem.service.rest.tripservice;
 
-import com.exalt.transportationbookingsystem.dataaccess.persondao.UserDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.userDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.BusTripDao;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.busTripDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.BusDao;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.busDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.BusTripRepository;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.BusTripRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.BusRepository;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.BusRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.AlreadyExistException;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * The type Bus trip service.
  */
-public class busTripServiceImpl implements BusTripService {
+public class BusTripServiceImpl implements BusTripService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "BusTrip not found";
@@ -29,15 +29,15 @@ public class busTripServiceImpl implements BusTripService {
     /**
      * The Bus trip dao.
      */
-    BusTripDao busTripDao = new busTripDaoImpl();
+    BusTripRepository busTripDao = new BusTripRepositoryImpl();
     /**
      * The Bus dao.
      */
-    BusDao busDao = new busDaoImpl();
+    BusRepository busDao = new BusRepositoryImpl();
     /**
      * The User dao.
      */
-    UserDao userDao = new userDaoImpl();
+    UserRepository userDao = new UserRepositoryImpl();
     @Override
     public BusTripDTO addBusTrip(BusTripDTO busTrip)
         throws NullValueException, AlreadyExistException {

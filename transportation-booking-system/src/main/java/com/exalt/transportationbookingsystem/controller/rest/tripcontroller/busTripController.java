@@ -4,7 +4,7 @@ import com.exalt.transportationbookingsystem.exception.AlreadyExistException;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.service.rest.tripservice.BusTripService;
-import com.exalt.transportationbookingsystem.service.rest.tripservice.busTripServiceImpl;
+import com.exalt.transportationbookingsystem.service.rest.tripservice.BusTripServiceImpl;
 import com.exalt.transportationbookingsystem.models.trip.dto.BusTripDTO;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -16,18 +16,18 @@ import org.slf4j.LoggerFactory;
  * The type Bus trip controller.
  */
 @Path("/busTrip")
-public class busTripController {
+public class BusTripController {
 
     private final String nullWarningMsg = "Posted null value object or null id";
     private final String notFoundWarningMsg = "Object not found when searching by id";
     private final String internalServerErrorMsg = "Internal server error";
     private final String alreadyExistWarningMsg = "Trip already exist in user trip list";
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(busTripController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BusTripController.class);
     /**
      * The Bus trip service.
      */
-    BusTripService busTripService = new busTripServiceImpl();
+    BusTripService busTripService = new BusTripServiceImpl();
 
     /**
      * Create bus trip response.

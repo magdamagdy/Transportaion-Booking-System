@@ -5,7 +5,7 @@ import com.exalt.transportationbookingsystem.models.vehicle.dto.BusDTO;
 import com.exalt.transportationbookingsystem.models.vehicle.dto.PlaneDTO;
 import com.exalt.transportationbookingsystem.models.vehicle.dto.TrainDTO;
 import com.exalt.transportationbookingsystem.service.soap.VehicleSoapService;
-import com.exalt.transportationbookingsystem.service.soap.vehicleSoapServiceImpl;
+import com.exalt.transportationbookingsystem.service.soap.VehicleSoapServiceImpl;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
 import java.util.List;
@@ -16,14 +16,14 @@ import org.slf4j.LoggerFactory;
  * The type Vehicle controller.
  */
 @WebService
-public class vehicleController {
+public class VehicleController {
 
   private final String notFoundWarningMsg = "Object not found when searching by id";
-  private static final Logger LOGGER = LoggerFactory.getLogger(vehicleController.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(VehicleController.class);
   /**
    * The Vehicle service.
    */
-  VehicleSoapService vehicleService = new vehicleSoapServiceImpl();
+  VehicleSoapService vehicleService = new VehicleSoapServiceImpl();
 
   /**
    * Get bus by id object.

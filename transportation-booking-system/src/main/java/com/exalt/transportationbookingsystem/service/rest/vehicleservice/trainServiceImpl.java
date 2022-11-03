@@ -1,9 +1,9 @@
 package com.exalt.transportationbookingsystem.service.rest.vehicleservice;
 
-import com.exalt.transportationbookingsystem.dataaccess.persondao.DriverDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.driverDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.TrainDao;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.trainDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.DriverRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.DriverRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.TrainRepository;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.TrainRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.models.vehicle.db.TrainDB;
@@ -14,18 +14,18 @@ import com.exalt.transportationbookingsystem.models.person.db.DriverDB;
 /**
  * The type Train service.
  */
-public class trainServiceImpl implements TrainService {
+public class TrainServiceImpl implements TrainService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "Train not found";
     /**
      * The Train dao.
      */
-    TrainDao trainDao = new trainDaoImpl();
+    TrainRepository trainDao = new TrainRepositoryImpl();
     /**
      * The Driver dao.
      */
-    DriverDao driverDao = new driverDaoImpl();
+    DriverRepository driverDao = new DriverRepositoryImpl();
     @Override
     public TrainDTO addTrain(TrainDTO train) throws NullValueException {
         if (train.getId()==0){

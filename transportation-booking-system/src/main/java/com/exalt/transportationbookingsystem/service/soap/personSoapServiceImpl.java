@@ -1,9 +1,9 @@
 package com.exalt.transportationbookingsystem.service.soap;
 
-import com.exalt.transportationbookingsystem.dataaccess.persondao.DriverDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.UserDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.driverDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.userDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.DriverRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.DriverRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.models.person.db.DriverDB;
 import com.exalt.transportationbookingsystem.models.person.db.UserDB;
@@ -19,18 +19,18 @@ import java.util.List;
 /**
  * The type Person soap service.
  */
-public class personSoapServiceImpl implements PersonSoapService{
+public class PersonSoapServiceImpl implements PersonSoapService{
 
     private final String driverNotFoundMsg = "Driver not found";
     private final String userNotFoundMsg = "Uer not found";
     /**
      * The User dao.
      */
-    UserDao userDao = new userDaoImpl();
+    UserRepository userDao = new UserRepositoryImpl();
     /**
      * The Driver dao.
      */
-    DriverDao driverDao = new driverDaoImpl();
+    DriverRepository driverDao = new DriverRepositoryImpl();
     @Override
     public UserDTO getUserById(int id) throws NotFoundException {
         UserDB userDB = userDao.readUserById(id);

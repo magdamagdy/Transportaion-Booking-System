@@ -1,7 +1,7 @@
 package com.exalt.transportationbookingsystem.service.rest.personservice;
 
-import com.exalt.transportationbookingsystem.dataaccess.persondao.DriverDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.driverDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.DriverRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.DriverRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.models.person.db.DriverDB;
@@ -12,14 +12,14 @@ import com.exalt.transportationbookingsystem.models.person.mapperinterfaces.Driv
 /**
  * The type Driver service.
  */
-public class driverServiceImpl implements DriverService {
+public class DriverServiceImpl implements DriverService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "Driver not found";
     /**
      * The Driver dao.
      */
-    DriverDao driverDao = new driverDaoImpl();
+    DriverRepository driverDao = new DriverRepositoryImpl();
 
     @Override
     public DriverDTO addDriver(DriverDTO driver) throws NullValueException {

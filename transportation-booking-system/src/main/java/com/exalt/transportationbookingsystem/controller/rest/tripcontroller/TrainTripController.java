@@ -4,7 +4,7 @@ import com.exalt.transportationbookingsystem.exception.AlreadyExistException;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.service.rest.tripservice.TrainTripService;
-import com.exalt.transportationbookingsystem.service.rest.tripservice.trainTripServiceImpl;
+import com.exalt.transportationbookingsystem.service.rest.tripservice.TrainTripServiceImpl;
 import com.exalt.transportationbookingsystem.models.trip.dto.TrainTripDTO;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -26,7 +26,7 @@ public class TrainTripController {
     /**
      * The Train trip service.
      */
-    TrainTripService trainTripService = new trainTripServiceImpl();
+    TrainTripService trainTripService = new TrainTripServiceImpl();
 
     /**
      * Create train trip response.

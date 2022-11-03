@@ -3,7 +3,7 @@ package com.exalt.transportationbookingsystem.controller.rest.personcontroller;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.service.rest.personservice.DriverService;
-import com.exalt.transportationbookingsystem.service.rest.personservice.driverServiceImpl;
+import com.exalt.transportationbookingsystem.service.rest.personservice.DriverServiceImpl;
 import com.exalt.transportationbookingsystem.models.person.dto.DriverDTO;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -15,15 +15,15 @@ import org.slf4j.LoggerFactory;
  * The type Driver controller.
  */
 @Path("/driver")
-public class driverController {
+public class DriverController {
     private final String nullWarningMsg = "Posted null value object or null id";
     private final String notFoundWarningMsg = "Object not found when searching by id";
     private final String internalServerErrorMsg = "Internal server error";
-    private static final Logger LOGGER = LoggerFactory.getLogger(driverController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(DriverController.class);
     /**
      * The Driver service.
      */
-    DriverService driverService = new driverServiceImpl();
+    DriverService driverService = new DriverServiceImpl();
 
     /**
      * Add driver response.

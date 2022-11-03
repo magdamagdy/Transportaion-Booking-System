@@ -1,9 +1,9 @@
 package com.exalt.transportationbookingsystem.service.rest.vehicleservice;
 
-import com.exalt.transportationbookingsystem.dataaccess.persondao.DriverDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.driverDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.BusDao;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.busDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.DriverRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.DriverRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.BusRepository;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.BusRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
 import com.exalt.transportationbookingsystem.models.vehicle.db.BusDB;
@@ -15,18 +15,18 @@ import com.exalt.transportationbookingsystem.models.person.db.DriverDB;
 /**
  * The type Bus service.
  */
-public class busServiceImpl implements BusService {
+public class BusServiceImpl implements BusService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "Bus not found";
     /**
      * The Bus dao.
      */
-    BusDao busDao = new busDaoImpl();
+    BusRepository busDao = new BusRepositoryImpl();
     /**
      * The Driver dao.
      */
-    DriverDao driverDao = new driverDaoImpl();
+    DriverRepository driverDao = new DriverRepositoryImpl();
     @Override
     public BusDTO addBus(BusDTO bus) throws NullValueException {
         if (bus.getId()==0){

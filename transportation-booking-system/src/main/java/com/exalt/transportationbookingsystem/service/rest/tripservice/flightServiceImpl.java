@@ -1,11 +1,11 @@
 package com.exalt.transportationbookingsystem.service.rest.tripservice;
 
-import com.exalt.transportationbookingsystem.dataaccess.persondao.UserDao;
-import com.exalt.transportationbookingsystem.dataaccess.persondao.userDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.FlightDao;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.flightDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.PlaneDao;
-import com.exalt.transportationbookingsystem.dataaccess.vehicledao.planeDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepository;
+import com.exalt.transportationbookingsystem.dataaccess.personrepository.UserRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.FlightRepository;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.FlightRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.PlaneRepository;
+import com.exalt.transportationbookingsystem.dataaccess.vehiclerepository.PlaneRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.AlreadyExistException;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import com.exalt.transportationbookingsystem.exception.NullValueException;
@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * The type Flight service.
  */
-public class flightServiceImpl implements FlightService {
+public class FlightServiceImpl implements FlightService {
 
     private final String nullValueMsg = "Null object or Null id";
     private final String notFoundMsg = "Flight not found";
@@ -30,15 +30,15 @@ public class flightServiceImpl implements FlightService {
     /**
      * The Flight dao.
      */
-    FlightDao flightDao = new flightDaoImpl();
+    FlightRepository flightDao = new FlightRepositoryImpl();
     /**
      * The Plane dao.
      */
-    PlaneDao planeDao = new planeDaoImpl();
+    PlaneRepository planeDao = new PlaneRepositoryImpl();
     /**
      * The User dao.
      */
-    UserDao userDao = new userDaoImpl();
+    UserRepository userDao = new UserRepositoryImpl();
 
     @Override
     public FlightDTO addFlight(FlightDTO flight) throws NullValueException, AlreadyExistException {

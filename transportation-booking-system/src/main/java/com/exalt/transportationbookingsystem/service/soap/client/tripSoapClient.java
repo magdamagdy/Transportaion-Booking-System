@@ -1,12 +1,12 @@
 package com.exalt.transportationbookingsystem.service.soap.client;
 
 
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.BusTripDao;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.FlightDao;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.TrainTripDao;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.busTripDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.flightDaoImpl;
-import com.exalt.transportationbookingsystem.dataaccess.tripdao.trainTripDaoImpl;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.BusTripRepository;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.FlightRepository;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.TrainTripRepository;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.BusTripRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.FlightRepositoryImpl;
+import com.exalt.transportationbookingsystem.dataaccess.triprepository.TrainTripRepositoryImpl;
 import com.exalt.transportationbookingsystem.exception.NotFoundException;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
@@ -15,21 +15,21 @@ import jakarta.jws.WebService;
  * The type Trip soap client.
  */
 @WebService
-public class tripSoapClient {
+public class TripSoapClient {
 
     private final String notFoundMsg = "Object not found to delete it";
     /**
      * The Bus trip dao.
      */
-    BusTripDao busTripDao = new busTripDaoImpl();
+    BusTripRepository busTripDao = new BusTripRepositoryImpl();
     /**
      * The Train trip dao.
      */
-    TrainTripDao trainTripDao = new trainTripDaoImpl();
+    TrainTripRepository trainTripDao = new TrainTripRepositoryImpl();
     /**
      * The Flight dao.
      */
-    FlightDao flightDao = new flightDaoImpl();
+    FlightRepository flightDao = new FlightRepositoryImpl();
 
     /**
      * Delete bus trip by id.
