@@ -1,5 +1,5 @@
 # Transportaion-Booking-System 
-This is a simple monolithic webservice application, it allows users to book any number of bus-trips, train-trips, and flights. 
+This is a simple monolithic webservice application, it allows users to book any number of bus-trips, train-trips and flights. 
 The trip entities are designed as to be providing all trip details including (the user who booked the trip, the vehicle assigned to this trip and the driver of the vehicle)    
     
 ## Technologies 
